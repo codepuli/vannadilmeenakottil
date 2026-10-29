@@ -221,7 +221,7 @@ section{border-bottom:0}
 <meta name="geo.region" content="IN-KL"><meta name="geo.placename" content="Payyanur">
 <link rel="canonical" href="https://vannadil.payyanur.in/">
 <link rel="alternate" hreflang="ml" href="https://vannadil.payyanur.in/">
-<link rel="alternate" hreflang="en" href="https://vannadil.payyanur.in/en/">
+<link rel="alternate" hreflang="en" href="https://vannadil.payyanur.in/en">
 <link rel="alternate" hreflang="x-default" href="https://vannadil.payyanur.in/">
 <link rel="icon" href="/photos/vmk.ico" sizes="any"><link rel="shortcut icon" href="/photos/vmk.ico">
 <meta property="og:type" content="website"><meta property="og:site_name" content="വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്">
@@ -239,7 +239,7 @@ section{border-bottom:0}
 <nav><div class="w">
   <b data-l="ml">വണ്ണാടിൽ മീനക്കൊട്ടിൽ</b><b data-l="en">Vannadil Meenakkottil</b>
   <div class="links" id="links"><a href="#schedule">പരിപാടികൾ</a><a href="#theyyams">തെയ്യം</a><a href="#rites">ചടങ്ങുകൾ</a><a href="#visit">സ്ഥലം</a></div>
-  <a class="lang" id="lang" href="/en/" hreflang="en">EN</a>
+  <a class="lang" id="lang" href="/en" hreflang="en">EN</a>
 </div></nav>
 
 <header class="hero">
@@ -367,7 +367,7 @@ const btns = () => `<a class="btn fill" href="${MAP}" target="_blank" rel="noope
 function render() {
   document.documentElement.lang = lang;
   $('#links').innerHTML = UI.nav.map(n => `<a href="#${n.id}">${n[lang]}</a>`).join('');
-  $('#lang').textContent = lang === 'ml' ? 'EN' : 'മലയാളം'; $('#lang').href = lang === 'ml' ? '/en/' : '/'; $('#lang').setAttribute('hreflang', lang === 'ml' ? 'en' : 'ml');
+  $('#lang').textContent = lang === 'ml' ? 'EN' : 'മലയാളം'; $('#lang').href = lang === 'ml' ? '/en' : '/'; $('#lang').setAttribute('hreflang', lang === 'ml' ? 'en' : 'ml');
   $('#kick').textContent = tr(UI.kick); $('#h1').textContent = tr(UI.title);
   $('#pills').innerHTML = UI.dates.map((d, i) => `<button type="button" class="pill" data-day="${i}">${d[lang]}</button>`).join('');
   $('#addr').textContent = tr(UI.addr);
