@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="ml"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-752W9Q7KPB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-752W9Q7KPB');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0605">
+<link href="https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0706;--panel:#150d0b;--line:#3b2720;--fg:#f3e9dc;--mut:#b9a493;--flame:#ff8a1f;--red:#c8202f}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.7 'Newsreader','Noto Serif Malayalam',serif;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+html[lang=ml] body{font-family:'Noto Serif Malayalam','Newsreader',serif;line-height:1.85}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--flame);outline-offset:3px}
+.w{max-width:960px;margin:0 auto;padding:0 18px}
+[data-l]{display:none}html[lang=ml] [data-l=ml],html[lang=en] [data-l=en]{display:revert}
+
+/* live banner */
+#live{display:none;background:var(--flame);color:#1a0d05;font-weight:700;font-size:15px;line-height:1.4}
+#live.on{display:block}
+#live .w{display:flex;gap:12px;align-items:center;padding-top:10px;padding-bottom:10px}
+#live a{flex:1;text-decoration:none}#live a u{margin-left:6px}
+#live button{font-size:22px;line-height:1;padding:4px 8px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(12,7,6,.94);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+nav .w{display:flex;align-items:center;gap:16px;height:56px}
+nav b{font-size:17px;white-space:nowrap}
+nav .links{display:flex;gap:18px;margin-left:auto;font-size:15px;overflow-x:auto;scrollbar-width:none}
+nav .links a{text-decoration:none;color:var(--mut);white-space:nowrap}
+nav .links a:hover{color:var(--fg)}
+.lang{border:1px solid var(--line);border-radius:4px;padding:3px 10px;font-size:14px;font-weight:700}
+@media(max-width:640px){nav b{display:none}nav .links{margin-left:0;flex:1}}
+
+/* hero */
+.hero{position:relative;min-height:78svh;display:flex;align-items:flex-end;border-bottom:1px solid var(--line);overflow:hidden;background:radial-gradient(120% 90% at 80% 0%,#5a1410,#1a0907 55%,#0c0706)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,3,.94) 8%,rgba(8,4,3,.62) 55%,rgba(8,4,3,.3))}
+.hero .w{position:relative;z-index:1;padding-top:80px;padding-bottom:40px}
+.kick{color:var(--flame);font-weight:600;font-size:15px}
+h1{font-size:clamp(2.1rem,8.5vw,4.2rem);line-height:1.15;font-weight:700;margin:6px 0 16px}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.pill{background:var(--flame);color:#1a0d05;font-weight:700;font-size:18px;line-height:1;padding:11px 18px;border-radius:99px}
+.addr{color:#e6d8c6;max-width:34em;font-size:16px;line-height:1.6}
+.cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:4px;border:2px solid var(--flame);font-weight:700;text-decoration:none;font-size:16px}
+.btn.fill{background:var(--flame);color:#1a0d05}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(12,7,6,.96);border-top:1px solid var(--line)}
+.sticky .btn{flex:1}
+@media(min-width:800px){.sticky{display:none}body{padding-bottom:0}}
+
+/* sections */
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.eyebrow{color:var(--flame);font-weight:600;font-size:15px}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.25;margin:4px 0 24px}
+.sched{display:grid;gap:0;border-top:1px solid var(--line)}
+.day{display:grid;grid-template-columns:1fr;gap:6px;padding:20px 0;border-bottom:1px solid var(--line)}
+.day h3{font-size:22px}.day small{display:block;color:var(--mut);font-size:15px}
+.slot{padding-left:14px;border-left:3px solid var(--red);margin-top:10px}
+.slot em{font-style:normal;color:var(--flame);font-weight:600;font-size:15px;display:block}
+@media(min-width:720px){.day{grid-template-columns:220px 1fr;gap:28px}}
+
+/* theyyam cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tc{display:flex;flex-direction:column;text-align:left;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow:hidden;transition:transform .18s,border-color .18s}
+.tc:hover,.tc:focus-visible{transform:translateY(-2px);border-color:var(--flame)}
+.tc img{width:100%;aspect-ratio:4/5;object-fit:cover;background:#241512}
+.tc .b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px;flex:1}
+.tc .when{font-size:13px;color:var(--mut)}
+.tc strong{font-size:17px;line-height:1.35}
+.tc .more{margin-top:auto;padding-top:10px;color:var(--flame);font-weight:700;font-size:15px;border-top:1px dashed var(--line);display:flex;justify-content:space-between}
+.tc.feat{grid-column:1/-1}.tc.feat img{aspect-ratio:16/10}
+@media(min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}.tc.feat{grid-column:span 1}.tc.feat img{aspect-ratio:4/5}}
+dialog{border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);padding:0;width:min(640px,calc(100% - 24px));max-height:88svh}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog img{width:100%;max-height:44svh;object-fit:cover;display:block}
+dialog .in{padding:20px 22px 26px}
+dialog h3{font-size:26px;line-height:1.3;margin-bottom:10px}
+dialog .x{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.7);font-size:20px}
+dialog p{white-space:pre-line}dialog p{white-space:pre-line}dialog p+p{margin-top:12px}
+
+/* rites */
+.note{color:var(--mut);font-size:15px;border-left:3px solid var(--red);padding-left:14px;margin-bottom:24px}
+.pills-nav{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 0 14px;margin:0 -18px;padding-inline:18px;scrollbar-width:thin}
+.rp{flex:none;scroll-snap-align:center;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 8px;border:1px solid var(--line);border-radius:99px;font-size:15px;white-space:nowrap;color:var(--mut)}
+.rp i{font-style:normal;font-weight:700;font-size:13px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line)}
+.rp[aria-selected=true]{background:var(--flame);border-color:var(--flame);color:#1a0d05;font-weight:700}
+.rp[aria-selected=true] i{background:#1a0d05;color:var(--flame);border-color:#1a0d05}
+.rc{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);border-radius:6px;padding:26px 22px}
+.rc .meta{color:var(--flame);font-weight:600;font-size:14px}
+.rc h3{font-size:clamp(1.5rem,5vw,2rem);line-height:1.3;margin:4px 0 12px}
+.rc .lead{font-size:19px;font-weight:600;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.rc p{max-width:42em}.rc p+p{margin-top:14px}
+.step{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
+.step .btn{min-height:44px;padding:0 16px;font-size:15px}
+.step .btn[disabled]{opacity:.3}
+
+/* find us */
+.visit p{max-width:40em}
+.info{margin:22px 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.info div{padding:14px 0;border-bottom:1px solid var(--line)}
+.info b{display:block;color:var(--flame);font-size:15px}
+/* map */
+.map{margin:22px 0 4px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.map iframe{display:block;width:100%;height:min(60svh,380px);border:0}
+footer{padding:30px 0 40px;color:var(--mut);font-size:14px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== Art direction v2: Manjari + Plus Jakarta Sans, cinematic hero, refined modal ===== */
+:root{--bg:#0b0605;--panel:#140c0a;--line:rgba(243,233,220,.14);--gold:#e9b872;--ease:cubic-bezier(.22,.8,.24,1)}
+body{font-family:'Plus Jakarta Sans','Manjari',sans-serif;font-size:16.5px;line-height:1.8;letter-spacing:.003em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html[lang=ml] body{font-family:'Manjari','Plus Jakarta Sans',sans-serif;font-size:18px;line-height:2;letter-spacing:0}
+h1,h2,h3,.kick,.eyebrow,nav b,.pill,.btn,.lang,.rp,.tc strong,.rc .lead{font-family:'Manjari','Plus Jakarta Sans',sans-serif}
+html[lang=en] h1,html[lang=en] h2{letter-spacing:-.015em}
+nav{background:rgba(11,6,5,.72);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
+.lang{border-radius:99px;padding:5px 14px;transition:background .25s,color .25s,border-color .25s}
+.lang:hover{background:var(--flame);color:#1a0d05;border-color:var(--flame)}
+.hero{min-height:94svh;border:0;background:#120806 url("/photos/Madayil_Chamundi_Theyyam_Vannadil_Meenakkottiil_Payyanur.JPG") center 28%/cover no-repeat}
+.hero video{animation:fade 1.4s ease both}
+.hero::after{background:radial-gradient(110% 85% at 50% 30%,transparent 35%,rgba(5,2,1,.6) 100%),linear-gradient(to top,rgba(8,4,3,.97) 3%,rgba(8,4,3,.6) 38%,rgba(8,4,3,.1) 72%,rgba(8,4,3,.55))}
+.hero .w{padding-bottom:56px}
+.hero .w>*{animation:rise 1s var(--ease) both}
+.hero .w>:nth-child(2){animation-delay:.12s}.hero .w>:nth-child(3){animation-delay:.24s}.hero .w>:nth-child(4){animation-delay:.34s}.hero .w>:nth-child(5){animation-delay:.44s}
+.kick{color:var(--gold);font-size:17px;letter-spacing:.02em}
+h1{font-size:clamp(2.6rem,10vw,5.6rem);line-height:1.08;font-weight:700;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+.pill{cursor:pointer;display:inline-flex;align-items:center;min-height:50px;padding:0 24px;background:rgba(255,138,31,.14);color:var(--fg);border:1px solid rgba(255,138,31,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .25s,color .25s,transform .25s var(--ease),box-shadow .25s}
+.pill:hover{background:var(--flame);color:#1a0d05;transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(255,138,31,.75)}
+.pill:active{transform:scale(.96);box-shadow:none}
+.addr{color:#eadfce;font-size:16.5px}
+.btn{border-radius:99px;transition:background .25s,color .25s,transform .25s var(--ease),box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(255,138,31,.7)}
+.btn.fill:hover{background:#ffa04a}.btn:not(.fill):hover{background:rgba(255,138,31,.14)}
+.btn:active{transform:scale(.97)}
+.sticky{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(11,6,5,.8)}
+section{padding:88px 0}
+.eyebrow{color:var(--gold);font-size:16px;letter-spacing:.01em}
+h2{font-size:clamp(1.9rem,5.5vw,2.9rem);line-height:1.2;margin:6px 0 28px}
+.day{padding:24px 14px;margin:0 -14px;border-radius:12px}
+.day.flash{animation:flash 1.8s ease}
+.slot{border-left-color:var(--flame)}
+.tc{border-radius:16px;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
+.tc:hover,.tc:focus-visible{transform:translateY(-4px);box-shadow:0 22px 44px -22px rgba(255,138,31,.45)}
+.tc img{transition:transform 1s var(--ease)}.tc:hover img{transform:scale(1.05)}
+.srcnote{margin:-10px 0 26px;font-size:15px;color:var(--mut);max-width:44em}
+.srcnote i,.src i{color:var(--fg)}
+.rc{border-radius:16px}.rp{transition:background .25s,color .25s,border-color .25s}
+.map{border-radius:16px}
+footer{padding:44px 0 56px;text-align:center;color:var(--gold);font-size:15px;line-height:1.7;border-top:1px solid var(--line)}
+footer .w{max-width:640px}footer #foot{white-space:pre-line}
+/* modal */
+dialog{margin:auto;inset:0;overflow:hidden;border-radius:22px;background:linear-gradient(180deg,#1b110e,#120a08);box-shadow:0 50px 140px -30px #000,0 0 0 1px rgba(255,138,31,.08);width:min(680px,calc(100% - 28px));max-height:min(90svh,900px)}
+dialog[open]{animation:pop .45s var(--ease)}
+dialog::backdrop{background:rgba(6,3,2,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);animation:fade .35s ease}
+dialog.out{animation:popout .22s ease forwards}dialog.out::backdrop{animation:fadeout .22s ease forwards}
+#dbody{max-height:min(90svh,900px);overflow-y:auto;overscroll-behavior:contain}
+body:has(dialog[open]){overflow:hidden}
+dialog img{max-height:42svh}
+dialog .in{padding:26px 28px 32px}
+dialog h3{font-size:clamp(1.7rem,5vw,2.2rem);margin-bottom:14px}
+dialog p{max-width:38em}
+dialog .x{background:rgba(11,6,5,.6);backdrop-filter:blur(8px);border:1px solid var(--line);transition:background .2s,transform .2s}
+dialog .x:hover{background:var(--flame);color:#1a0d05;transform:rotate(90deg)}
+dialog p.verse{border-left:2px solid var(--flame);padding:6px 0 6px 18px;margin-block:18px;color:#f0e1cd;font-style:italic;font-size:.96em}
+html[lang=ml] dialog p.verse{font-style:normal}
+.src{margin-top:26px;padding:14px 18px;border-radius:14px;background:rgba(255,138,31,.08);border:1px solid rgba(255,138,31,.3);font-size:15px;line-height:1.7;color:var(--mut)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes fadeout{to{opacity:0}}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes popout{to{opacity:0;transform:translateY(10px) scale(.97)}}
+@keyframes flash{0%{background:rgba(255,138,31,.22)}100%{background:transparent}}
+@media(prefers-reduced-motion:reduce){*,::backdrop{animation:none!important}}
+
+/* ===== v4: readable hero tag, brand mark, footer link ===== */
+.kick{display:inline-block;width:fit-content;color:#fff4e2;font-weight:700;font-size:17px;padding:6px 16px;border-radius:99px;background:rgba(8,4,3,.5);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+nav .brand::before{content:"";width:28px;height:28px;border-radius:50%;flex:none;background:url(/photos/4.jpg) 90.2% 63.6%/294% auto no-repeat #cf1e22;box-shadow:0 0 0 1.5px rgba(233,184,114,.55)}
+nav .brand b{font-size:20px;font-weight:700;letter-spacing:.01em;color:var(--gold);transition:color .25s}
+html[lang=en] nav .brand b{letter-spacing:-.005em}
+nav .brand:hover b{color:#fff4e2}
+@media(max-width:640px){nav .brand b{display:inline;font-size:16px}nav .brand::before{width:24px;height:24px}nav .w{gap:10px}}
+footer a{color:inherit;text-decoration:underline;text-decoration-color:rgba(233,184,114,.5);text-underline-offset:.22em;transition:color .2s}
+footer a:hover{color:var(--flame)}
+
+/* ===== v3: separate pages, motion, thottam card ===== */
+a.lang{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
+.orn.band{height:14px}
+.hero .w>h1{opacity:0;animation:showh1 .01s 2.5s forwards}
+html.k .hero .w>h1{opacity:1;animation:none}
+.kw{display:inline-block;white-space:nowrap}
+.ku{display:inline-block;opacity:0;transform:translateY(24px);animation:kin .9s cubic-bezier(.16,1,.3,1) var(--d,0s) forwards}
+@keyframes kin{to{opacity:1;transform:none}}@keyframes showh1{to{opacity:1}}
+.mesh-cv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mesh{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;filter:blur(60px);opacity:.3;--m1:#ff6a1a;--m2:#b3141b;--m3:#e9b872;--m4:#6b1d12}
+.mesh[data-theme=light]{opacity:.55;--m1:#ffb27a;--m2:#ff8f8f;--m3:#ffe2a8;--m4:#ffc9a0}
+.mesh i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;will-change:transform;background:radial-gradient(circle,var(--c) 0,transparent 65%)}
+.mesh i:nth-child(1){--c:var(--m1);left:-18vmax;top:-12vmax;animation:d1 17s ease-in-out infinite alternate}
+.mesh i:nth-child(2){--c:var(--m2);right:-20vmax;top:10vmax;animation:d2 20s ease-in-out infinite alternate}
+.mesh i:nth-child(3){--c:var(--m3);left:10vmax;bottom:-28vmax;animation:d3 19s ease-in-out infinite alternate}
+.mesh i:nth-child(4){--c:var(--m4);right:-10vmax;bottom:-20vmax;animation:d4 16s ease-in-out infinite alternate}
+@keyframes d1{to{transform:translate3d(30vmax,18vmax,0) rotate(40deg) scale(1.25)}}
+@keyframes d2{to{transform:translate3d(-28vmax,22vmax,0) rotate(-35deg) scale(.85)}}
+@keyframes d3{to{transform:translate3d(26vmax,-16vmax,0) rotate(60deg) scale(1.2)}}
+@keyframes d4{to{transform:translate3d(-24vmax,-20vmax,0) rotate(-50deg) scale(1.3)}}
+.btn,.pill{position:relative;overflow:hidden;translate:var(--mx,0) var(--my,0);transition:background .25s,color .25s,transform .25s var(--ease),box-shadow .25s,translate .2s var(--ease)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.tc{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px)) scale(var(--sc,1));will-change:transform;transition:transform .3s cubic-bezier(.25,.8,.25,1),border-color .3s,box-shadow .35s}
+.tc:hover,.tc:focus-visible{--ty:-4px;--sc:1.02;transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty)) scale(var(--sc));box-shadow:0 26px 50px -22px rgba(255,138,31,.5)}
+.thottam{display:block;margin:2px 0 22px;padding:16px 18px;border-radius:14px;text-decoration:none;color:#1a0d05;background:linear-gradient(135deg,var(--flame),#ffb35c);box-shadow:0 14px 34px -14px rgba(255,138,31,.7);transition:transform .25s var(--ease),box-shadow .25s}
+.thottam:hover{transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(255,138,31,.85)}
+.thottam b{display:block;font-family:'Manjari',sans-serif;font-size:1.12em;line-height:1.4}
+.thottam small{display:block;margin-top:3px;font-size:.86em;line-height:1.55;opacity:.88}
+
+/* ===== Motifs: 1 = diamond band, 2 = ribbon, 3 = framed bar bullet, 4 = flower ===== */
+section{border-bottom:0}
+.orn{display:block;width:100%;background-repeat:repeat-x}
+.orn.band{height:26px;background-image:url(/photos/1.jpg);background-size:auto 300%;background-position:center}
+.orn.rib{height:14px;margin:0 auto;max-width:960px;width:calc(100% - 36px);background-image:url(/photos/2.jpg);background-size:100% 100%;border-radius:2px;opacity:.92}
+.slot em::before,.when::before{content:"";display:inline-block;width:.8em;height:.8em;margin-right:.55em;vertical-align:-.05em;background:url(/photos/3.jpg) center/cover;border-radius:2px}
+.eyebrow::before,.info b::before{content:"";display:inline-block;width:1.15em;height:1.15em;margin-right:.55em;vertical-align:-.22em;border-radius:50%;background:url(/photos/4.jpg) 90.2% 63.6%/294% auto no-repeat #cf1e22}
+.tlink{display:inline;text-align:left;font:inherit;font-weight:600;color:var(--fg);text-decoration:underline;text-decoration-color:rgba(255,138,31,.6);text-underline-offset:.2em;text-decoration-thickness:1px;transition:color .2s,text-decoration-color .2s}
+.tlink:hover{color:var(--flame);text-decoration-color:var(--flame)}
+.info a{color:inherit;text-decoration:underline;text-underline-offset:.2em}
+.info a:hover{color:#ffa04a}
+</style>
+<noscript><style>.hero .w>h1{opacity:1!important;animation:none!important}</style></noscript>
+<title>പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026</title>
+<meta name="description" content="പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും.">
+<meta name="keywords" content="വണ്ണാടിൽ മീനക്കൊട്ടിൽ, പയ്യന്നൂർ, കളിയാട്ടം 2026, തെയ്യം, മടയിൽ ചാമുണ്ഡി, വിഷ്ണുമൂർത്തി, കാനക്കര ഭഗവതി, ഗുളികൻ, ശ്രീകണ്ഠൻ ദൈവം">
+<meta name="author" content="Nikhil Narayanan">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="geo.region" content="IN-KL"><meta name="geo.placename" content="Payyanur">
+<link rel="canonical" href="https://vannadil.payyanur.in/">
+<link rel="alternate" hreflang="ml" href="https://vannadil.payyanur.in/">
+<link rel="alternate" hreflang="en" href="https://vannadil.payyanur.in/en">
+<link rel="alternate" hreflang="x-default" href="https://vannadil.payyanur.in/">
+<link rel="icon" href="/photos/vmk.ico" sizes="any"><link rel="shortcut icon" href="/photos/vmk.ico">
+<meta property="og:type" content="website"><meta property="og:site_name" content="വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്">
+<meta property="og:url" content="https://vannadil.payyanur.in/"><meta property="og:locale" content="ml_IN"><meta property="og:locale:alternate" content="en_IN">
+<meta property="og:title" content="പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026"><meta property="og:description" content="പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും.">
+<meta property="og:image" content="https://vannadil.payyanur.in/photos/vmk_social_preview.jpg"><meta property="og:image:alt" content="വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്ടിലെ മടയിൽ ചാമുണ്ഡി തെയ്യം, പയ്യന്നൂർ">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026">
+<meta name="twitter:description" content="പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും."><meta name="twitter:image" content="https://vannadil.payyanur.in/photos/vmk_social_preview.jpg"><meta name="twitter:image:alt" content="വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്ടിലെ മടയിൽ ചാമുണ്ഡി തെയ്യം, പയ്യന്നൂർ">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://vannadil.payyanur.in/#website","url":"https://vannadil.payyanur.in/","name":"Payyanur Vannadil Meenakkottil Tharavadu Kaliyattam 2026","inLanguage":["ml","en"],"publisher":{"@type":"Organization","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","url":"https://vannadil.payyanur.in/"}},{"@type":"WebPage","@id":"https://vannadil.payyanur.in/#page","url":"https://vannadil.payyanur.in/","name":"പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026","description":"പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും.","inLanguage":"ml","isPartOf":{"@id":"https://vannadil.payyanur.in/#website"},"primaryImageOfPage":"https://vannadil.payyanur.in/photos/vmk_social_preview.jpg","about":{"@id":"https://vannadil.payyanur.in/#event"}},{"@type":"Event","@id":"https://vannadil.payyanur.in/#event","name":"പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026","description":"പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും.","url":"https://vannadil.payyanur.in/","image":["https://vannadil.payyanur.in/photos/vmk_social_preview.jpg"],"startDate":"2026-11-07","endDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","inLanguage":"ml","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}},"organizer":{"@type":"Organization","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","url":"https://vannadil.payyanur.in/"},"subEvent":[{"@type":"Event","name":"മടയിൽ ചാമുണ്ഡി","startDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}}},{"@type":"Event","name":"ഉത്തമന്തിൽ ശ്രീകണ്ഠൻ ദൈവം","startDate":"2026-11-07","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}}},{"@type":"Event","name":"വിഷ്ണുമൂർത്തി","startDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}}},{"@type":"Event","name":"കാനക്കര ഭഗവതി","startDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}}},{"@type":"Event","name":"ഗുളികൻ","startDate":"2026-11-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","address":{"@type":"PostalAddress","streetAddress":"വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്","addressLocality":"Payyanur","addressSubregion":"Kannur","addressRegion":"Kerala","addressCountry":"IN"}}}]}]}</script>
+</head>
+<body id="top">
+<div class="mesh" aria-hidden="true" data-theme="dark"><i></i><i></i><i></i><i></i></div>
+<div id="live" role="status"><div class="w"><a href="#schedule"><span id="liveTxt"></span><u data-l="ml">പരിപാടികൾ</u><u data-l="en">Schedule</u></a><button id="liveX" aria-label="Dismiss">×</button></div></div>
+
+<nav><div class="w">
+  <a class="brand" href="#top" aria-label="Back to top"><b data-l="ml">വണ്ണാടിൽ മീനക്കൊട്ടിൽ</b><b data-l="en">Vannadil Meenakkottil</b></a>
+  <div class="links" id="links"><a href="#schedule">പരിപാടികൾ</a><a href="#theyyams">തെയ്യം</a><a href="#rites">ചടങ്ങുകൾ</a><a href="#visit">സ്ഥലം</a></div>
+  <a class="lang" id="lang" href="/en" hreflang="en">EN</a>
+</div></nav>
+
+<header class="hero">
+  <!-- Hero: photo is the CSS background; videos/intro.mp4 fades in over it once it starts playing. -->
+  <video id="hv" autoplay="" muted="" loop="" playsinline="" preload="metadata" poster="/photos/Madayil_Chamundi_Theyyam_Vannadil_Meenakkottiil_Payyanur.JPG" hidden=""></video>
+  <div class="w">
+    <div class="kick" id="kick">വണ്ണാടിൽ മീനക്കൊട്ടിൽ, പയ്യന്നൂർ</div>
+    <h1 id="h1">കളിയാട്ടം 2026</h1>
+    <div class="pills" id="pills"><button type="button" class="pill" data-day="0">ശനി 7 നവംബർ</button><button type="button" class="pill" data-day="1">ഞായർ 8 നവംബർ</button></div>
+    <p class="addr" id="addr">വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്, പയ്യന്നൂർ, കേരളം</p>
+    <div class="cta" id="cta"><a class="btn fill" href="https://maps.app.goo.gl/1vqZAdVURY2QHLWk6?g_st=ic" target="_blank" rel="noopener">വഴി</a><a class="btn" href="#theyyams">തെയ്യങ്ങൾ</a></div>
+  </div>
+</header>
+<div class="orn band" aria-hidden="true"></div>
+
+<main>
+<section id="schedule"><div class="w"><div class="eyebrow" id="e1">രണ്ട് ദിവസം, അഞ്ച് തെയ്യങ്ങൾ</div><h2 id="t1">പരിപാടികൾ</h2><div class="sched" id="sched"><div class="day" id="day0"><div><h3>ശനി</h3><small>7 നവംബർ 2026</small></div><div><div class="slot"><em>രാത്രി</em><div><button type="button" class="tlink" data-id="sree">ഉത്തമന്തിൽ ശ്രീകണ്ഠൻ ദൈവം</button></div></div></div></div><div class="day" id="day1"><div><h3>ഞായർ</h3><small>8 നവംബർ 2026</small></div><div><div class="slot"><em>രാവിലെ</em><div><button type="button" class="tlink" data-id="vish">വിഷ്ണുമൂർത്തി</button></div></div><div class="slot"><em>ഉച്ചയ്ക്ക് മുമ്പ്</em><div><button type="button" class="tlink" data-id="cham">മടയിൽ ചാമുണ്ഡി</button></div><div><button type="button" class="tlink" data-id="kana">കാനക്കര ഭഗവതി</button></div></div><div class="slot"><em>ഉച്ചയ്ക്ക് ശേഷം</em><div><button type="button" class="tlink" data-id="guli">ഗുളികൻ</button></div></div></div></div></div></div></section>
+<div class="orn rib" aria-hidden="true"></div>
+<section id="theyyams"><div class="w"><div class="eyebrow" id="e2">ഐതിഹ്യം അറിയാൻ കാർഡിൽ ക്ലിക്ക് ചെയ്യുക</div><h2 id="t2">തെയ്യം</h2><p class="srcnote" id="srcnote">മടയിൽ ചാമുണ്ഡിയുടെയും വിഷ്ണുമൂർത്തിയുടെയും ഐതിഹ്യപാഠങ്ങൾ ഡോ. ആർ. സി. കരിപ്പത്തിന്റെ <i>തെയ്യപ്രപഞ്ചം</i> എന്ന ഗ്രന്ഥത്തിൽ നിന്ന് എടുത്തതാണ്.</p><div class="cards" id="cards"><button class="tc feat" data-id="cham"><img src="/photos/madayil-chamundi.jpeg" alt="Madayil Chamundi" loading="lazy"><span class="b"><span class="when">ഞായർ 8 നവംബർ · ഉച്ചയ്ക്ക് മുമ്പ്</span><strong>മടയിൽ ചാമുണ്ഡി</strong><span class="more"><span>ഐതിഹ്യം വായിക്കുക →</span></span></span></button><button class="tc" data-id="sree"><img src="/photos/sreekantan-daivam.jpeg" alt="Uthamanthil Sreekantan Daivam" loading="lazy"><span class="b"><span class="when">ശനി 7 നവംബർ · രാത്രി</span><strong>ഉത്തമന്തിൽ ശ്രീകണ്ഠൻ ദൈവം</strong><span class="more"><span>ഐതിഹ്യം വായിക്കുക →</span></span></span></button><button class="tc" data-id="vish"><img src="/photos/vishnumurthy.jpeg" alt="Vishnumoorthy" loading="lazy"><span class="b"><span class="when">ഞായർ 8 നവംബർ · രാവിലെ</span><strong>വിഷ്ണുമൂർത്തി</strong><span class="more"><span>ഐതിഹ്യം വായിക്കുക →</span></span></span></button><button class="tc" data-id="kana"><img src="/photos/kanakkara-bhagavathi.jpeg" alt="Kanakkara Bhagavathi" loading="lazy"><span class="b"><span class="when">ഞായർ 8 നവംബർ · ഉച്ചയ്ക്ക് മുമ്പ്</span><strong>കാനക്കര ഭഗവതി</strong><span class="more"><span>ഐതിഹ്യം വായിക്കുക →</span></span></span></button><button class="tc" data-id="guli"><img src="/photos/gulikan.jpeg" alt="Gulikan" loading="lazy"><span class="b"><span class="when">ഞായർ 8 നവംബർ · ഉച്ചയ്ക്ക് ശേഷം</span><strong>ഗുളികൻ</strong><span class="more"><span>ഐതിഹ്യം വായിക്കുക →</span></span></span></button></div></div></section>
+<div class="orn rib" aria-hidden="true"></div>
+<section id="rites"><div class="w"><div class="eyebrow" id="e3">ചടങ്ങുകൾ ഒന്നൊന്നായി</div><h2 id="t3">ഒരു കളിയാട്ടത്തിന്റെ നഖചിത്രം</h2><p class="note" id="note">(Late) വി.പി. ബാലകൃഷ്ണൻ എഴുതിയ ഈ ലേഖനം 2019-ലെ തറവാട് സ്മരണികയിൽ പ്രസിദ്ധീകരിച്ചതാണ്. വണ്ണാടിൽ മീനക്കൊട്ടിലിലെ കളിയാട്ടച്ചടങ്ങുകൾ കുടുംബാംഗങ്ങളുടെ അറിവിലേക്കായി വിവരിക്കുന്ന ലേഖനമായിരുന്നു അത്.</p>
+  <div class="pills-nav" id="rp" role="tablist"><button class="rp" role="tab" id="rt0" aria-selected="true" tabindex="0" data-s="0"><i>01</i>തീയ്യതി നിശ്ചയിക്കൽ</button><button class="rp" role="tab" id="rt1" aria-selected="false" tabindex="-1" data-s="1"><i>02</i>അടയാളം കൊടുക്കൽ</button><button class="rp" role="tab" id="rt2" aria-selected="false" tabindex="-1" data-s="2"><i>03</i>നടതുറക്കൽ</button><button class="rp" role="tab" id="rt3" aria-selected="false" tabindex="-1" data-s="3"><i>04</i>വന്നറിയിച്ച് കൊട്ടൽ</button><button class="rp" role="tab" id="rt4" aria-selected="false" tabindex="-1" data-s="4"><i>05</i>വെള്ളാട്ടം</button><button class="rp" role="tab" id="rt5" aria-selected="false" tabindex="-1" data-s="5"><i>06</i>ദൈവം (ശ്രീകണ്ഠൻ ദൈവം)</button><button class="rp" role="tab" id="rt6" aria-selected="false" tabindex="-1" data-s="6"><i>07</i>വിഷ്ണുമൂർത്തി</button><button class="rp" role="tab" id="rt7" aria-selected="false" tabindex="-1" data-s="7"><i>08</i>മടയിൽ ചാമുണ്ഡി</button><button class="rp" role="tab" id="rt8" aria-selected="false" tabindex="-1" data-s="8"><i>09</i>കാനക്കര ഭഗവതി</button><button class="rp" role="tab" id="rt9" aria-selected="false" tabindex="-1" data-s="9"><i>10</i>ഗുളികൻ</button><button class="rp" role="tab" id="rt10" aria-selected="false" tabindex="-1" data-s="10"><i>11</i>കുറി കൊടുക്കൽ</button><button class="rp" role="tab" id="rt11" aria-selected="false" tabindex="-1" data-s="11"><i>12</i>വിളക്ക്തിരി ഉഴിയൽ</button><button class="rp" role="tab" id="rt12" aria-selected="false" tabindex="-1" data-s="12"><i>13</i>അവകാശികൾ</button></div><article class="rc" id="rc" role="tabpanel" aria-live="polite" aria-labelledby="rt0"><div class="meta">01 / 13 · ഒരുക്കം</div><h3>തീയ്യതി നിശ്ചയിക്കൽ</h3><p class="lead">നിശ്ചിത തീയ്യതിയില്ല; തുലാം 21-ന് ശേഷം വരുന്ന ശനി, ഞായർ ദിവസങ്ങളിലാണ് കളിയാട്ടം.</p><p>മീനക്കൊട്ടിലിൽ തെയ്യം നടത്തുന്നതിനായി പ്രത്യേകമായ തീയ്യതി നിശ്ചയിച്ചിട്ടില്ല. ശ്രീ മടയിൽ ചാമുണ്ഡി, വണ്ണാടിൽ പൊതുവാൾക്ക് ആദ്യമായി ദർശനം നൽകിയ ആലന്തട്ട മടവാതുക്കലിൽ കളിയാട്ടം നടത്തുന്ന തുലാമാസം 21 കഴിഞ്ഞാൽ മീനക്കൊട്ടിലിൽ കളിയാട്ടം നടത്താമെന്നാണ് ആചാരം.</p><p>തറവാട്ടിലെ അംഗങ്ങൾക്ക് കളിയാട്ടത്തിൽ സജീവമായി പങ്കെടുക്കുന്നതിന് സൗകര്യപ്രദമായ രീതിയിൽ തുലാം 21ന് ശേഷം വരുന്ന ശനി, ഞായർ ദിവസങ്ങളിലാണ് വർഷങ്ങളായി കളിയാട്ടം നടത്തിവരുന്നത്. മുൻകാലങ്ങളിൽ വൃശ്ചിക സംക്രമ ദിവസങ്ങളിൽ പോലും കളിയാട്ടം നടത്തിയതായി രേഖകൾ തെളിയിക്കുന്നുണ്ട്.</p><p>എന്നാൽ പയ്യന്നൂർ പെരുമാളുടെ ആരാധന ഉത്സവത്തിനായി ശുദ്ധിക്രിയകൾ തുടങ്ങിയാൽ ഊർബലിക്കകത്ത് കോഴിയറവ് നടത്തുന്നത് ഉചിതമല്ലെന്നതിനാൽ പുനഃപ്രതിഷ്ഠ ചടങ്ങുകൾക്ക് ശേഷം ശുദ്ധി തുടങ്ങിയതിനു ശേഷം കളിയാട്ടം നടത്താറില്ല.</p>
+    <div class="step"><button class="btn" data-go="-1" disabled="">‹ മുമ്പത്തേത്</button><button class="btn" data-go="1">അടുത്തത് ›</button></div></article></div></section>
+<div class="orn rib" aria-hidden="true"></div>
+<section id="visit" class="visit"><div class="w"><div class="eyebrow" id="e4">എത്തിച്ചേരാൻ</div><h2 id="t4">സ്ഥലം</h2><p id="vtxt">വണ്ണാടിൽ മീനക്കൊട്ടിൽ കണ്ണൂർ ജില്ലയിലെ പയ്യന്നൂർ സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രത്തിന്റെ പടിഞ്ഞാറ് ഭാഗത്താണ് സ്ഥിതി ചെയ്യുന്നത്.</p><div class="info" id="info"><div><b>ഏറ്റവും അടുത്തുള്ള വിമാനത്താവളം</b>കണ്ണൂർ വിമാനത്താവളം (58 കി.മീ അകലെ).</div><div><b>ഏറ്റവും അടുത്തുള്ള റെയിൽവേ സ്റ്റേഷൻ</b>പയ്യന്നൂർ റെയിൽവേ സ്റ്റേഷൻ (1.8 കി.മീ അകലെ). ഇവിടെ നിന്നും ക്ഷേത്രത്തിലേക്ക് ഓട്ടോകളും ടാക്സികളും ലഭ്യമാണ്.</div><div><b>ഏറ്റവും അടുത്തുള്ള ബസ് സ്റ്റാൻഡ്</b>പയ്യന്നൂർ ബസ് സ്റ്റാൻഡ് (1.6 കി.മീ അകലെ).</div></div>
+  <div class="map"><iframe title="Map: Vannadil Meenakkottil, Payyanur" src="https://www.google.com/maps?q=Vannadil+Meenakottil+Tharavadu+Payyanur+Kerala&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe></div>
+  <div class="cta" id="cta2"><a class="btn fill" href="https://maps.app.goo.gl/1vqZAdVURY2QHLWk6?g_st=ic" target="_blank" rel="noopener">ഗൂഗിൾ മാപ്സിൽ തുറക്കുക ↗</a></div></div></section>
+</main>
+<div class="orn band" aria-hidden="true"></div>
+<footer><div class="w"><span id="foot">പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026
+<a href="mailto:nikhilnarayanan@gmail.com">നിഖിൽ നാരായണൻ</a> ഭക്തിയോടെ സമർപ്പിക്കുന്നത്</span></div></footer>
+
+<div class="sticky" id="sticky"><a class="btn fill" href="https://maps.app.goo.gl/1vqZAdVURY2QHLWk6?g_st=ic" target="_blank" rel="noopener">വഴി</a><a class="btn" href="#theyyams">തെയ്യങ്ങൾ</a></div>
+<dialog id="dlg" aria-label="Theyyam legend"><button class="x" id="dx" aria-label="Close">✕</button><div id="dbody"></div></dialog>
+
+<script>
+(() => {
+'use strict';
+const MAP = 'https://maps.app.goo.gl/1vqZAdVURY2QHLWk6?g_st=ic';
+const THOTTAM_URL = 'https://ml.wikisource.org/wiki/%E0%B4%AE%E0%B4%9F%E0%B4%AF%E0%B4%BF%E0%B5%BD_%E0%B4%9A%E0%B4%BE%E0%B4%AE%E0%B5%81%E0%B4%A3%E0%B5%8D%E0%B4%A1%E0%B4%BF_%E0%B4%A4%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B4%82_(%E0%B4%A4%E0%B5%8B%E0%B4%B1%E0%B5%8D%E0%B4%B1%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%BE)';
+const HERO_VIDEO = '/videos/intro.mp4';
+const PRE = !!window.__PRERENDER, RM = !PRE && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const PHOTO = n => `/photos/${n}.jpeg`;
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let lang = document.documentElement.lang === 'en' ? 'en' : 'ml';
+const tr = o => o[lang];
+
+/* ---------------- Content (each field has one Malayalam and one English string) ---------------- */
+const META = {t:{ml:'പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026',en:'Payyanur Vannadil Meenakkottil Tharavadu Kaliyattam 2026'},d:{ml:'പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടത്തിന്റെ ഔദ്യോഗിക വിവരങ്ങളും സമയവിവരങ്ങളും.',en:'Official schedule, updates, and details for the Payyanur Vannadil Meenakkottil Tharavadu Kaliyattam 2026.'}};
+const UI = {
+  nav: [{ml:'പരിപാടികൾ',en:'Schedule',id:'schedule'},{ml:'തെയ്യം',en:'Theyyams',id:'theyyams'},{ml:'ചടങ്ങുകൾ',en:'Rites',id:'rites'},{ml:'സ്ഥലം',en:'Location',id:'visit'}],
+  kick:{ml:'വണ്ണാടിൽ മീനക്കൊട്ടിൽ, പയ്യന്നൂർ',en:'Vannadil Meenakkottil, Payyanur'},
+  title:{ml:'കളിയാട്ടം 2026',en:'Kaliyattam 2026'},
+  dates:[{ml:'ശനി 7 നവംബർ',en:'Sat 7 November'},{ml:'ഞായർ 8 നവംബർ',en:'Sun 8 November'}],
+  addr:{ml:'വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട്, പയ്യന്നൂർ, കേരളം',en:'Vannadil Meenakkottil Tharavadu, Payyanur, Kerala'},
+  dir:{ml:'വഴി',en:'Directions'}, ty:{ml:'തെയ്യങ്ങൾ',en:'Theyyams'},
+  e1:{ml:'രണ്ട് ദിവസം, അഞ്ച് തെയ്യങ്ങൾ',en:'Two days, five Theyyams'}, t1:{ml:'പരിപാടികൾ',en:'Schedule'},
+  e2:{ml:'ഐതിഹ്യം അറിയാൻ കാർഡിൽ ക്ലിക്ക് ചെയ്യുക',en:'Tap a card for the legend'}, t2:{ml:'തെയ്യം',en:'Theyyams'},
+  e3:{ml:'ചടങ്ങുകൾ ഒന്നൊന്നായി',en:'The rites, step by step'}, t3:{ml:'ഒരു കളിയാട്ടത്തിന്റെ നഖചിത്രം',en:'A Snapshot of a Kaliyattam'},
+  note:{ml:'(Late) വി.പി. ബാലകൃഷ്ണൻ എഴുതിയ ഈ ലേഖനം 2019-ലെ തറവാട് സ്മരണികയിൽ പ്രസിദ്ധീകരിച്ചതാണ്. വണ്ണാടിൽ മീനക്കൊട്ടിലിലെ കളിയാട്ടച്ചടങ്ങുകൾ കുടുംബാംഗങ്ങളുടെ അറിവിലേക്കായി വിവരിക്കുന്ന ലേഖനമായിരുന്നു അത്.',
+        en:'The Malayalam version of this article by the late V.P. Balakrishnan was originally published in the tharavad souvenir in 2019. This is a translation of the same. The rites of the Kaliyattam at Vannadil Meenakkottil are described below for the knowledge of family members.'},
+  e4:{ml:'എത്തിച്ചേരാൻ',en:'Getting here'}, t4:{ml:'സ്ഥലം',en:'Location'},
+  vtxt:{ml:'വണ്ണാടിൽ മീനക്കൊട്ടിൽ കണ്ണൂർ ജില്ലയിലെ പയ്യന്നൂർ സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രത്തിന്റെ പടിഞ്ഞാറ് ഭാഗത്താണ് സ്ഥിതി ചെയ്യുന്നത്.',en:'Vannadil Meenakkottil is located on the western side of Subrahmanya Swamy Temple, Payyanur, Kannur district, Kerala, India.'},
+  map:{ml:'ഗൂഗിൾ മാപ്സിൽ തുറക്കുക ↗',en:'Open in Google Maps ↗'},
+  prev:{ml:'‹ മുമ്പത്തേത്',en:'‹ Previous'}, next:{ml:'അടുത്തത് ›',en:'Next ›'}, read:{ml:'ഐതിഹ്യം വായിക്കുക →',en:'Read the legend →'},
+  tbd:{ml:'ഈ ഭാഗത്തിന്റെ വിവരണം ഉടൻ ചേർക്കും.',en:'The description for this section will be added soon.'},
+  nostory:{ml:'ഐതിഹ്യം ഉടൻ ചേർക്കും.',en:'The legend will be added soon.'},
+  foot:{ml:'പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിൽ തറവാട് കളിയാട്ടം 2026\n<a href="mailto:nikhilnarayanan@gmail.com">നിഖിൽ നാരായണൻ</a> ഭക്തിയോടെ സമർപ്പിക്കുന്നത്',en:'Payyanur Vannadil Meenakkottil Tharavadu Kaliyattam 2026\nBuilt and dedicated by <a href="mailto:nikhilnarayanan@gmail.com">Nikhil Narayanan</a>'},
+  srcNote:{ml:'മടയിൽ ചാമുണ്ഡിയുടെയും വിഷ്ണുമൂർത്തിയുടെയും ഐതിഹ്യപാഠങ്ങൾ ഡോ. ആർ. സി. കരിപ്പത്തിന്റെ <i>തെയ്യപ്രപഞ്ചം</i> എന്ന ഗ്രന്ഥത്തിൽ നിന്ന് എടുത്തതാണ്.',en:'The Madayil Chamundi and Vishnumurthy texts are sourced from <i>Theyyaprapancham</i> by Dr. R. C. Karipath.'},
+  thottam:{h:{ml:'മടയിൽ ചാമുണ്ഡി തോറ്റം',en:'Madayil Chamundi Thottam'},s:{ml:'തോറ്റം പാട്ടുകൾ മലയാളം വിക്കിഗ്രന്ഥശാലയിൽ വായിക്കാം · വണ്ണാടിൽ മീനക്കൊട്ടിൽ സ്മരണിക 2019-ൽ നിന്ന്',en:'Read the Madayil Chamundi Thottam songs on Malayalam Wikisource · from the Vannadil Meenakkottil Smaranika 2019'}},
+  srcModal:{ml:'ഉറവിടം: ഡോ. ആർ. സി. കരിപ്പത്ത്, <i>തെയ്യപ്രപഞ്ചം</i>',en:'Source: <i>Theyyaprapancham</i> by Dr. R. C. Karipath'}
+};
+const INFO = [
+  {h:{ml:'ഏറ്റവും അടുത്തുള്ള വിമാനത്താവളം',en:'Nearest Airport'},v:{ml:'കണ്ണൂർ വിമാനത്താവളം (58 കി.മീ അകലെ).',en:'Kannur Airport is the nearest airport (58 km away).'}},
+  {h:{ml:'ഏറ്റവും അടുത്തുള്ള റെയിൽവേ സ്റ്റേഷൻ',en:'Nearest Railway Station'},v:{ml:'പയ്യന്നൂർ റെയിൽവേ സ്റ്റേഷൻ (1.8 കി.മീ അകലെ). ഇവിടെ നിന്നും ക്ഷേത്രത്തിലേക്ക് ഓട്ടോകളും ടാക്സികളും ലഭ്യമാണ്.',en:'Payyanur Railway Station is the nearest station (1.8 km away), with autos and taxis available to the temple.'}},
+  {h:{ml:'ഏറ്റവും അടുത്തുള്ള ബസ് സ്റ്റാൻഡ്',en:'Nearest Bus Stand'},v:{ml:'പയ്യന്നൂർ ബസ് സ്റ്റാൻഡ് (1.6 കി.മീ അകലെ).',en:'Payyanur Bus Stand is the nearest bus stand (1.6 km away).'}}
+];
+
+/* Day/slot labels */
+const SAT={ml:'ശനി',en:'Saturday'}, SUN={ml:'ഞായർ',en:'Sunday'}, D7={ml:'7 നവംബർ 2026',en:'7 November 2026'}, D8={ml:'8 നവംബർ 2026',en:'8 November 2026'};
+const EVE={ml:'വൈകുന്നേരം',en:'Evening'}, NGT={ml:'രാത്രി',en:'Evening'}, MOR={ml:'രാവിലെ',en:'Morning'}, FOR={ml:'ഉച്ചയ്ക്ക് മുമ്പ്',en:'Forenoon'}, AFT={ml:'ഉച്ചയ്ക്ക് ശേഷം',en:'Afternoon'};
+
+/* Theyyams. Add or replace the story text here; paragraphs are separated by a blank line. */
+const TY = [
+  {id:'cham',src:1,link:1,img:'madayil-chamundi',feat:1,n:{ml:'മടയിൽ ചാമുണ്ഡി',en:'Madayil Chamundi'},day:'8',slot:FOR,story:{ml:"പാതാളമൂർത്തി എന്നുകൂടി വിളിപ്പേരുള്ള ഈ മഹാകാളി ചണ്ഡമുണ്ഡന്മാർ ഒളിച്ചു പാതാളത്തോളം പിന്തുടർന്ന കൊടിയ ഭൈരവിയാണ്. ആലന്തട്ട വനത്തിൽ നായാട്ടിനിറങ്ങിയ വണ്ണാടിൽ പൊതുവാളുടെ പിന്നാലെ കൊടുങ്കാറ്റുപോലെ മടയിൽ നിന്നും പാഞ്ഞോടി വന്ന ദേവി മടയിൽച്ചാമുണ്ഡിയായി ആദ്യ ആരൂഢമായ ആലന്തട്ട മടവാത്തിലും പിന്നെ തിമിരിഗോപുരത്തിലും കരിവെള്ളൂർ കോട്ടൂരിൽ പയ്യന്നൂർ വണ്ണാടി മീനക്കൊട്ടിലും ശേഷിപ്പെട്ടു. അവിടെ നിന്നാണ് അമ്മോൻപെരുമാളുടെ അനുവാദത്തോടെ അനേകം കാവുകളിലേക്ക് എഴുന്നള്ളിയത്.\n\nമടയിൽച്ചാമുണ്ഡി മറ്റു പേരുകളിട്ടും കെട്ടിയാടിച്ചു വരുന്നുണ്ട്. ആനമടച്ചാമുണ്ഡി, ബലിച്ചേരിചാമുണ്ഡി, മേനച്ചൂർചാമുണ്ഡി, കരിമണൽ ചാമുണ്ഡി, മാമലച്ചാമുണ്ഡി തുടങ്ങിയ പേരുകളാണ് അവ. തെയ്യത്തോറ്റങ്ങളിൽ അതീവ ഹൃദ്യതരമാണ് മടയിൽച്ചാമുണ്ഡിത്തോറ്റം.\n\n> യമണ്ടിയാം മടയകത്തങ്ങുതകിയ മടപാതാളം\nകരുമണൽ താമളത്തോടഴകേറുമാലത്തട്ട\nമടവാതിൽ മഹിമതങ്കും\nവണ്ണാടി മീനക്കൊട്ടിൽ\nനിലയേറുമധിഷ്ഠാനങ്ങൾ\nനിലനിന്നുകൊണ്ട മായേ\n\nഎന്നു തുടങ്ങുന്ന സ്തുതിയിലും 'ആദിതാനാദിത്യാനാദിതാന്‍ മൂർത്തിനീ-യമ്പോടുടൻ കലർന്നുണ്ടായ ഭൈരവി' എന്നാരംഭിക്കുന്ന തോറ്റത്തിലും ദേവിയുടെ കേശാദിപാദവർണ്ണന കാണാം.",en:"This Mahakali, also known by the epithet Pathalamurthi (Goddess of the Netherworld), is a fierce Bhairavi who pursued Chandan and Munda all the way down to the netherworld (Pathala). Rushing out like a whirlwind from her lair (mada) behind Vannadil Pothuval, who had gone hunting in the Alanthatta forest, the Goddess first enshrined herself as Madayil Chamundi at Alanthatta Madavathil. Later, her divine presence was established at Thimiri Gopuram, Karivellur Kottur, and Payyannur Vannadil Meenakkottil. It was from there, with the permission of Ammon Perumal, that she was solemnly taken in procession to numerous sacred groves (kavus).\n\nMadayil Chamundi is also performed under various other names, such as Anamadachamundi, Baliccherichamundi, Menacchurchamundi, Karimanal Chamundi, and Mamalachamundi. Among the Theyyam ritual songs (Thottam), the Madayil Chamundi Thottam is particularly captivating and heart-touching.\n\nA detailed description of the Goddess from head to toe (Keshadipada Varnana) can be found in the hymn beginning with:\n\n> Yamandiyāma maḍayakaththaṅguthakiya maḍapāthāḷam Karumaṇal thāmaḷathōdaḻakērumālatthatta Maḍavāthil mahimathaṅgum Vaṇṇādi mīnakkoṭṭil Nilayērumadhiṣṭhānṅaḷ Nilaninnukhoṇḍa māyē\n\nand also in the Thottam song starting with:\n\n> Āditānādityānāditān mūrthinī-yambōṭuḍan kalarṇunḍāya bhairavi"}},
+  {id:'sree',img:'sreekantan-daivam',n:{ml:'ഉത്തമന്തിൽ ശ്രീകണ്ഠൻ ദൈവം',en:'Uthamanthil Sreekantan Daivam'},day:'7',slot:NGT,story:{ml:"പതിനെട്ടാം നൂറ്റാണ്ടിൽ ചിറക്കൽ കോവിലകത്തിനു വേണ്ടി പോരാടിയ ഒരു വീരയോദ്ധാവ്. അദ്ദേഹത്തിന്റെ വീരമൃത്യു സംഭവിച്ച വർഷമോ യുദ്ധമോ കൃത്യമായി കണ്ടെത്താൻ സാധിച്ചിട്ടില്ലെങ്കിലും, രേഖപ്പെടുത്തിയ ചരിത്രവസ്തുതകളും വാമൊഴികളും കോർത്തിണക്കി നോക്കുമ്പോൾ അത് 1730-കളിൽ ആയിരുന്നു എന്ന് കരുതപ്പെടുന്നു. പിൽക്കാലത്ത് ദേവസങ്കൽപ്പത്തിലേക്ക് ഉയർത്തപ്പെട്ട (ദൈവക്കരുവായ) ശ്രീകണ്ഠൻ ദൈവം, ഇന്ന് വണ്ണാടിൽ മീനക്കൊട്ടിൽ ദേവസ്ഥാനത്ത് കെട്ടിയാടപ്പെടുന്ന അഞ്ച് തെയ്യങ്ങളിൽ ആദ്യത്തേതാണ്.",en:"A legendary warrior associated with the tharavadu who fought for the Chirakkal Kingdom during the 18th century. Although we have not been able to pin down the exact year or the specific battle in which he was martyred, piecing together documented history and oral traditions points toward the 1730s. Later deified as Sreekantan Daivam, he is honored as the first of the five Theyyams performed at the Vannadil Meenakkottil Devasthanam, opening the festival in its sequence."}},
+  {id:'vish',src:1,img:'vishnumurthy',n:{ml:'വിഷ്ണുമൂർത്തി',en:'Vishnumoorthy'},day:'8',slot:MOR,story:{ml:"മൂന്നു നൂറ്റാണ്ടുമുമ്പ് നീലേശ്വരത്തിനടുത്ത കൊയാമ്പുറം ഗ്രാമത്തിലെ കാലിയാനായ തീയ ചെറുക്കനുമായി ബന്ധപ്പെട്ട കഥയാണ് വിഷ്ണുമൂർത്തിതെയ്യത്തിന്റേത്. കുറുവാട്ട് കുറുപ്പെന്ന പ്രഭു ജന്മിയുടെ കാലികളെ മേയ്ക്കുന്ന പണിയായിരുന്നു കണ്ണന്. കണ്ണനിൽ കുറുപ്പിന്റെ അനന്തരവൾ അനുരക്തയാവുകയും കാര്യമറിഞ്ഞ് വധിക്കാൻ പാഞ്ഞെത്തിയ കയ്യന്മാരിൽ നിന്ന് കണ്ണൻ ഓടി രക്ഷപ്പെടുകയും ചെയ്യുന്നു. വടക്ക് മംഗലാപുരത്ത് കോയിൽപ്പാടി എന്ന തീയത്തറവാട്ടിൽ അഭയം തേടിയ കണ്ണനെ അവിടുത്തെ മുത്തശ്ശി സ്വന്തം മകനെപ്പോലെ സ്വീകരിച്ചു. തറവാട്ടിലെ പരദേവതയായ നരസിംഹമൂർത്തിയുടെ പൂജകനും നിത്യാരാധകനുമായി വർഷം അഞ്ച് പിന്നിട്ടപ്പോൾ പിറന്നനാട്ടുകാണാൻ കണ്ണനു കൊതിയായി. വേഗം മടങ്ങിവരുമെന്നു യാത്ര ചൊല്ലി നടയിറങ്ങിയ ആ യുവാവ് നീലേശ്വരത്തുവന്നെത്തി കദളികുളത്തിൽ കുളിക്കാനിറങ്ങി. കഥയറിഞ്ഞു പാഞ്ഞെത്തിയ കുറുവാട്ടുകുറുപ്പ് കണ്ണന്റെ കഴുത്തറുത്തു. നാടാകെ ദുർനിമിത്തം കണ്ടു. കുറുപ്പിന്റെ തറവാട് കിടുങ്ങി. പ്രായശ്ചിത്തമായി കോട്ടപ്പുറത്ത് നരസിംഹമൂർത്തി(വിഷ്ണുമൂർത്തി)ക്ക് കുറുപ്പ് കാവൊരുക്കി. കളിയാട്ടം നടത്തി. പാലന്തായി കണ്ണന്റെ തെയ്യക്കോലവും ഈ കാവിൽ കെട്ടിയാടിച്ചു. ഇന്ന് തീയർമാത്രമല്ല സകലസമുദായങ്ങളും ഈ തെയ്യത്തിന്റെ ആരാധകന്മാരാണ്.\n\nമംഗലാപുരത്ത് കോയിൽ കുറിപ്പാടിയിൽ നരസിംഹമൂർത്തിക്ക് പൂജാരിയായിരുന്നുവത്രേ കണ്ണൻ. എന്നാൽ നാരായണ ശത്രുവായ ഹിരണ്യന്റെ മകൻ പ്രഹ്ലാദകുമാരന്റെ ഭക്തിപാരവശ്യവും അതൊന്നുകൊണ്ടുതന്നെ മകനെ വധിക്കാനൊരുങ്ങുന്ന പിതൃകോപവും ഈ കഥയിൽ കാണാം. “എവിടെ നിന്റെ നാരായണൻ” എന്ന ഹിരണ്യന്റെ ചോദ്യത്തിന് “സർവ്വ വ്യാപിനായ നാരായണ ഭഗവാൻ ഈ കൊട്ടാരത്തുണിലുമുണ്ട്” എന്നാണുമുത്തരം കൊടുത്തത്. ആ സന്ധ്യാ നേരത്ത് ഉടവാളുകൊണ്ട് തൂണിൽ വെട്ടിയപ്പോൾ അതിന്റെ അകത്തുനിന്ന് സിംഹവും നരനും ഒത്തുചേർന്ന ഭീതിദരൂപം പ്രത്യക്ഷനായി. ഹിരണ്യനെ വാതിൽപ്പടിയിൽ കിടത്തി കൈനഖങ്ങളാൽ വയർ കീറി നരസിംഹം വധിച്ചു. ആ ഭാഗവത കഥാരംഗങ്ങൾ വിഷ്ണുമൂർത്തി തെയ്യം അവതരിപ്പിക്കുന്നത് കമനീയമായ കാഴ്ചകളാണ്.",en:"The story of the Vishnu Moorthy Theyyam is associated with a Thiyya youth who was a cowherd in the village of Koyamburam near Nileshwaram, three centuries ago. Kannan's job was to graze the cattle of the feudal lord known as Kuruwatt Kurup. Kurup's niece fell in love with Kannan, and upon learning of this, Kannan ran away and escaped from the henchmen who rushed to kill him. Having sought refuge in a Thiyya ancestral house called Koilpadi in Mangalore to the north, Kannan was welcomed by its matriarch (grandmother) as if he were her own son. After spending five years as a priest and daily worshipper of Narasimhamurthi, the family deity of the house, Kannan felt a strong desire to see his homeland. Bidding farewell and promising to return soon, the young man stepped out, arrived in Nileshwaram, and went down to bathe in the Kadalikkulam (plantain pond/tank). Upon learning of this, Kuruwatt Kurup rushed there and slit Kannan's throat. Ominous signs were witnessed throughout the land.\n\nKurup's ancestral home trembled. As a form of expiation, Kurup built a kavu (sacred grove) for Narasimhamurthi (Vishnu Moorthy) at Kottappuram. He conducted the kaliyattam (Theyyam festival), and the Theyyam form of Palanthai Kannan was also performed here. Today, not only the Thiyya community, but people from all communities are devotees of this Theyyam.\n\nIt is said that Kannan was a priest to Narasimhamurthy at the Mangalappuram Koyil Kurippadi. In this story, one can witness the devotional ecstasy of Prahlada, the son of Hiranya who was an enemy of Narayana, as well as the paternal anger of the father preparing to kill his son because of it. To Hiranya's question, \"Where is your Narayana?\", the reply given was, \"The all-pervading Lord Narayana is present even in this palace pillar.\" At that twilight hour, when [Hiranya] struck the pillar with a sword, a terrifying form combining a lion and a man appeared from within it. Narasimha laid Hiranya down on the threshold and killed him by tearing open his belly with his fingernails. Portraying these Bhagavata mythological scenes in the Vishnumoorthy Theyyam shrine is a captivating sight."}},
+  {id:'kana',img:'kanakkara-bhagavathi',n:{ml:'കാനക്കര ഭഗവതി',en:'Kanakkara Bhagavathi'},day:'8',slot:FOR,story:{ml:"കാളക്കാട്ട് തന്ത്രി തൻ്റെ ഉപാസനയിലും തന്ത്രമന്ത്രങ്ങളിലുമായി മുഴുകിയിരുന്ന സമയത്ത്, ഇല്ലത്തുനിന്ന് ഒരു കിടാവ് നിർത്താതെ അസഹ്യമായി കരഞ്ഞുകൊണ്ടിരുന്നു. കോപവും തടസ്സവും തോന്നിയ തന്ത്രി, കുട്ടിയുടെ കരച്ചിൽ എങ്ങനെയെങ്കിലും ഒന്നു നിർത്താൻ ആരോടെന്നില്ലാതെ ഉറക്കെ പറഞ്ഞു. തന്ത്രി ഉപാസിച്ചിരുന്ന ദേവി ആ വാക്കുകൾ കേട്ടമാത്രയിൽ കുട്ടിയെ കൊന്ന് കരച്ചിൽ അവസാനിപ്പിച്ചു.\n\nകുട്ടിയുടെ കരച്ചിലടക്കാൻ ദേവി കാണിച്ച ഈ ഭയാനകമായ ക്രൂരതയിൽ കാളക്കാട്ട് തന്ത്രി അതീവ കോപിഷ്ഠനായി. തുടർന്ന്, ദേവിയുടെ ചൈതന്യം കുടികൊള്ളുന്ന തൻ്റെ കാലും പലകയും (പൂജാ പീഠത്തിന്റെ ഭാഗങ്ങൾ) തന്ത്രി ദൂരേക്ക് വലിച്ചെറിഞ്ഞു. ആ പലക ചെന്ന് പതിച്ചത് പാലായിയിലെ ഇടമന തന്ത്രിയുടെ ഇല്ലപ്പറമ്പിലെ കാനതട്ടിലായിരുന്നു (കാട്ടിൽ). ദേവ സാന്നിധ്യം തിരിച്ചറിഞ്ഞ ഇടമന തന്ത്രി ആ ചൈതന്യത്തെ തൻ്റെ ഇല്ലത്ത് കുടിയിരുത്തുകയും, പഴയ പലക പുഴയിലേക്ക് ഒഴുക്കുകയും ചെയ്തു.\n\nപുഴയിലൂടെ ഒഴുകിവന്ന ആ പലക, അരയി പുഴയിൽ കുളിച്ചുകൊണ്ടിരുന്ന അരയി തീയ്യന്റെ ശരീരത്തിൽ വന്നു തട്ടി. തുടർന്ന് ആ തീയ്യൻ തൻ്റെ വീടിൻ്റെ പടിഞ്ഞാറ്റയിൽ ആ ഭഗവതിയെ കുടിയിരുത്തി. ഇന്ന് കാഞ്ഞങ്ങാട് അരയി പ്രദേശത്ത് ഈ ദേവസങ്കല്പത്തെ കടവത്ത് ഭഗവതിയായും, ചീമേനി ആലന്തട്ടയിലും പയ്യന്നൂർ വണ്ണാടിൽ മീനക്കൊട്ടിലിലും കാനക്കര ഭഗവതിയായും കെട്ടിയാടപ്പെടുന്നു.",en:"While the Kalakkattu Tantri was deeply immersed in his worship and tantric rituals, a child in the house was crying uncontrollably and unbearably. Feeling annoyed and disturbed in his worship, the Tantri uttered aloud, without addressing anyone in particular, to somehow stop the child's crying. Hearing those words, the Goddess worshipped by the Tantri instantly killed the child to end the crying.\n\nInfuriated by the terrible cruelty displayed by the Goddess instead of merely calming the child, the Kalakkattu Tantri threw away the sacred wooden seat (Kaalum Palakayum / parts of the ritual pedestal) housing the divine essence (Chaitanya) to a distant place. That wooden plank landed in the dense forest area (Kaanathattu) within the premises of Edamana Tantri's household in Palayi. Recognizing the divine presence, the Edamana Tantri consecrated the deity's essence in his house and set the old wooden plank adrift in the river.\n\nFloating down the river, the plank brushed against an Arayi Thiyyan who was bathing in the Arayi River. Subsequently, he consecrated the Goddess in the Padinjatta (the sacred western shrine room) of his home. Today, this divine manifestation is worshipped as Kadavathu Bhagavathy in the Arayi region of Kanhangad, and as Kaanakkara Bhagavathy in Cheemeni Alanthatta as well as Payyanur Vannad Meenakkottil."}},
+  {id:'guli',img:'gulikan',n:{ml:'ഗുളികൻ',en:'Gulikan'},day:'8',slot:AFT,story:{ml:"ഈ തെയ്യത്തിന്റെ ഉൽപ്പത്തി മാർക്കണ്ഡേയ മുനിക്ക് വേണ്ടി പരമശിവനും യമനും തമ്മിലുണ്ടായ പോരാട്ടവുമായി നേരിട്ട് ബന്ധപ്പെട്ടിരിക്കുന്നു. മാർക്കണ്ഡേയനെ രക്ഷിക്കാനായി ശിവൻ യമനെ പ്രഹരിച്ചു നിഗ്രഹിച്ചതോടെ, പ്രപഞ്ചത്തിലുടനീളം മരണം പൂർണ്ണമായും നിലച്ചു. മരണം ഇല്ലാതായതോടെ ഭൂമിയിൽ കടുത്ത ജനപ്പെരുപ്പമുണ്ടാവുകയും, ഇത് ഭൂമീദേവിക്ക് താങ്ങാനാവാത്ത ഭാരമായി മാറി പ്രപഞ്ചത്തിന്റെ സ്വാഭാവിക സമതുലിതാവസ്ഥയെ തെറ്റിക്കുകയും ചെയ്തു.\n\nമാർക്കണ്ഡേയന് നൽകിയ ചിരഞ്ജീവിത്വ വരം നിലനിർത്തിക്കൊണ്ട് തന്നെ ലോകത്തിന്റെ സമതുലിതാവസ്ഥ വീണ്ടെടുക്കാനായി, ശിവൻ തന്റെ ഇടതുകാലിന്റെ പെരുവിരൽ നിലത്തടിച്ചു. അപ്പോൾ ശിവന്റെ കാൽവിരലിൽ നിന്ന് ഉഗ്രരൂപിയും ശക്തനുമായ ഒരു അവതാരം പിറവിയെടുത്തു: അതാണ് ഗുളികൻ. ശിവൻ ഗുളികന് തന്റെ വിശുദ്ധമായ ത്രിശൂലവും കർമ്മപാശവും കൈമാറി. ജീവന്റെ സംക്രമണങ്ങൾ നിയന്ത്രിക്കാനും പ്രപഞ്ചത്തിൽ വീണ്ടും സമാധാനം പുനഃസ്ഥാപിക്കാനുമായി മരണം, സമയം, പ്രപഞ്ച നീതി എന്നിവ നടപ്പിലാക്കുന്ന പുതിയ അധികാരിയായി ശിവൻ ഗുളികനെ നിയോഗിക്കുകയും ചെയ്തു.",en:"The origin of Gulikan stems from the cosmic crisis that arose during the legendary clash between Lord Shiva and Yama over the young sage Markandeya. After Shiva struck down Yama to save Markandeya, mortality ceased across the universe, leading to severe overpopulation that disrupted the natural cosmic cycle and weighed heavily upon Mother Earth.\n\nTo restore global equilibrium while keeping his promise of immortality to Markandeya, Lord Shiva struck his left big toe against the ground, instantly giving birth to the fierce manifestation known as Gulikan. Bestowing Gulikan with his sacred trident and the rope of karma, Shiva designated him as the new executor of death, time, and cosmic justice to manage life transitions and bring peace back to the universe."}}
+];
+const dayLbl = d => d === '7' ? {ml:'ശനി 7 നവംബർ',en:'Sat 7 Nov'} : {ml:'ഞായർ 8 നവംബർ',en:'Sun 8 Nov'};
+const SCHED = [
+  {d:SAT,date:D7,slots:[[NGT,['sree']]]},
+  {d:SUN,date:D8,slots:[[MOR,['vish']],[FOR,['cham','kana']],[AFT,['guli']]]}
+];
+
+/* Rites: 13 steps. Fill `lead` and `body` for steps 02–13 the same way as step 01. */
+const GROUPS = [{ml:'ഒരുക്കം',en:'Preparations'},{ml:'ഒന്നാം ദിവസം',en:'Day one'},{ml:'രണ്ടാം ദിവസം',en:'Day two'},{ml:'സമാപനം',en:'Closing'},{ml:'അവകാശികൾ',en:'The families'}];
+const RITES = [
+ {g:0,n:{ml:'തീയ്യതി നിശ്ചയിക്കൽ',en:'Fixing the date'},
+  lead:{ml:'നിശ്ചിത തീയ്യതിയില്ല; തുലാം 21-ന് ശേഷം വരുന്ന ശനി, ഞായർ ദിവസങ്ങളിലാണ് കളിയാട്ടം.',en:'There is no fixed date. The Kaliyattam is held on the Saturday and Sunday after Thulam 21.'},
+  body:{ml:['മീനക്കൊട്ടിലിൽ തെയ്യം നടത്തുന്നതിനായി പ്രത്യേകമായ തീയ്യതി നിശ്ചയിച്ചിട്ടില്ല. ശ്രീ മടയിൽ ചാമുണ്ഡി, വണ്ണാടിൽ പൊതുവാൾക്ക് ആദ്യമായി ദർശനം നൽകിയ ആലന്തട്ട മടവാതുക്കലിൽ കളിയാട്ടം നടത്തുന്ന തുലാമാസം 21 കഴിഞ്ഞാൽ മീനക്കൊട്ടിലിൽ കളിയാട്ടം നടത്താമെന്നാണ് ആചാരം.','തറവാട്ടിലെ അംഗങ്ങൾക്ക് കളിയാട്ടത്തിൽ സജീവമായി പങ്കെടുക്കുന്നതിന് സൗകര്യപ്രദമായ രീതിയിൽ തുലാം 21ന് ശേഷം വരുന്ന ശനി, ഞായർ ദിവസങ്ങളിലാണ് വർഷങ്ങളായി കളിയാട്ടം നടത്തിവരുന്നത്. മുൻകാലങ്ങളിൽ വൃശ്ചിക സംക്രമ ദിവസങ്ങളിൽ പോലും കളിയാട്ടം നടത്തിയതായി രേഖകൾ തെളിയിക്കുന്നുണ്ട്.','എന്നാൽ പയ്യന്നൂർ പെരുമാളുടെ ആരാധന ഉത്സവത്തിനായി ശുദ്ധിക്രിയകൾ തുടങ്ങിയാൽ ഊർബലിക്കകത്ത് കോഴിയറവ് നടത്തുന്നത് ഉചിതമല്ലെന്നതിനാൽ പുനഃപ്രതിഷ്ഠ ചടങ്ങുകൾക്ക് ശേഷം ശുദ്ധി തുടങ്ങിയതിനു ശേഷം കളിയാട്ടം നടത്താറില്ല.'],
+   en:['No specific date has been fixed for the Theyyam at Meenakkottil. By custom, the Kaliyattam may be held once Thulam 21 has passed. That is the day the Kaliyattam is held at Alanthatta Madavathukkal, where Sree Madayil Chamundi first gave darshan to Vannadil Pothuval.','So that members of the tharavadu can take an active part, the Kaliyattam has for many years been held on the Saturday and Sunday that follow Thulam 21. Records show that in earlier times it was even held around Vrischika Sankramam.','However, once the purification rites begin for the Payyanur Perumal festival, a fowl offering (Kozhiyaravu) within the Urbali circuit is considered unsuitable. For this reason the Kaliyattam is not held after the purification begins following the re-consecration (Punahpratishtha) ceremonies.']}},
+ {g:0,n:{ml:'അടയാളം കൊടുക്കൽ',en:'Giving the Adayalam'},body:{ml:["വർഷം തോറും തുലാമാസം 10ന് നടത്തുന്ന പുത്തരി അടിയന്തരം കഴിഞ്ഞാൽ ബന്ധപ്പെട്ടവർ തെയ്യത്തിന് തീയ്യതി നിശ്ചയിച്ച് അടയാളം കൊടുക്കുന്നതിനുള്ള കഴിക്കുന്നു. തീയ്യതി കൂടി നിശ്ചയിക്കുന്നതാണ്. അടയാളം കൊടുക്കുന്നതിനായി തെയ്യം കെട്ടുവാൻ അധികാരമുള്ള ജന്മാവകാശികളായ പെരുവണ്ണാനെയും, കലശക്കാരനെയും അടയാളം കൊടുക്കുവാൻ നിശ്ചയിച്ച ദിവസത്തേക്ക് മീനക്കൊട്ടിലിലേക്ക് ക്ഷണിച്ചു വരുത്തുന്നതാണ്.", "മീനക്കൊട്ടിലിന്റെ തിരുമുറ്റത്ത് വെച്ച് വെറ്റില അടക്കയും ദക്ഷിണയും നൽകേണ്ടതാണ്. പെരുവണ്ണാൻ തിരുമുറ്റത്ത് വെച്ച് ഭഗവതിയെ തൊഴുതു വണങ്ങി തറവാട്ട് കാരണവരിൽ നിന്നും അടയാളം വാങ്ങുവാൻ തയ്യാറായാൽ ആദ്യമായി കലശക്കാരന് വെറ്റില അടക്കയും ദക്ഷിണയും നൽകി തെയ്യം നടത്തുവാൻ നിശ്ചയിച്ച തീയ്യതി കലശക്കാരനെച്ചൊല്ലി കേൾപ്പിക്കേണ്ടും, കലശക്കാരൻ സന്നിഹിതനായില്ലെങ്കിൽ ഇത് കലശത്തറയിൽ വെക്കേണ്ടതുമാണ്.", "പിന്നീട് പെരുവണ്ണാനെയും തെയ്യം നടത്തേണ്ടുന്ന തീയ്യതി കേൾപ്പിച്ച് അടയാളം കൊടുക്കുന്നു."],en:["Afterwards, the standing lamps inside the Palliyara are brought out, washed, cleaned, and lit, followed by the puffed rice offering (Malar Nivedyam). Once the annual Puthari Adiyanthiram held on the 10th of Thulam is completed, the concerned parties fix the date for the Theyyam and perform the ritual of giving the sign (Adaiyalam Kodukkal).", "To give this sign, the Peruvanannan and the Kalashakkaran—who possess the hereditary right to perform Theyyam—are formally invited to Meenakkottil on the designated day. Betel leaves, areca nut, and dakshina are to be offered in the courtyard of Meenakkottil. Once the Peruvanannan bows and worships the Bhagavathi in the courtyard and agrees to receive the sign from the family elder (Karanavar), the date fixed for the Theyyam is first announced to the Kalashakkaran along with offering him betel leaves, areca nut, and dakshina.", "If the Kalashakkaran is not present, this is placed at the Kalashathara. Subsequently, the date of the Theyyam is announced to the Peruvanannan, thereby giving the sign."]}},
+ {g:1,n:{ml:'നടതുറക്കൽ',en:'Opening the shrine'},body:{ml:["കളിയാട്ടത്തിന് തറവാട്ടിലെ ഒരാൾ നോറ്റിരിക്കേണ്ടതാണ്. നോറ്റിരിക്കുന്ന ആൾ കളിയാട്ടം തുടങ്ങുന്ന ദിവസം നടതുറന്ന് ഇളനീർ കൊണ്ട് കലശം നടത്തുന്നു. അതിന് ശേഷം പള്ളിയറയിലെ നിലവിളക്കുകൾ പുറത്തെടുത്ത് കഴുകി വൃത്തിയാക്കി ദീപം വെച്ച ശേഷം മലർ നിവേദ്യം കഴിക്കുന്നു. പിന്നീട് പൂജാ പാത്രങ്ങളും വിഗ്രഹങ്ങളും, തിരുവായുധങ്ങളും പുറത്തെടുത്ത് വെച്ച് കഴുകി വൃത്തിയാക്കുന്നു.", "ദേവീ പീഠങ്ങളും യഥാവിധി വൃത്തിയാക്കിയശേഷം പീഠത്തിന് പിറകിലായി പട്ട് കെട്ടുന്നു. പിന്നീട് വിഗ്രഹങ്ങളിൽ ചാർത്തേണ്ടുന്ന ആഭരണങ്ങൾ അണിയിച്ച ശേഷം വിഗ്രഹങ്ങളും തിരുവായുധങ്ങളും യഥാസ്ഥാനത്ത് വെക്കുന്നു. തെയ്യത്തിന്റെ തോറ്റം ചൊല്ലുവാൻ പെരുവണ്ണാന്മാർ വന്നാൽ അവർക്ക് കൊടുക്കേണ്ടുന്ന കൊടിയിലയിൽ വെക്കുവാനുള്ള ചന്ദനം, രക്തചന്ദനം എന്നിവ തയ്യാറാക്കി കൊടിയിലയിൽ വെക്കുകയെന്നതാണ് അടുത്തപ്രവർത്തി.", "തെയ്യം കഴിക്കേണ്ടുന്ന അവകാശികൾ കൊണ്ടുവരുന്ന നിവേദ്യ സാധനങ്ങൾ അതിന്റെ കൃത്യത നോക്കി എടുത്തു വെക്കുക എന്നത് തറവാട്ടംഗങ്ങളുടെ ബാദ്ധ്യതയാണ്. തെയ്യം കഴിഞ്ഞ് നടയടക്കുന്നതു വരെ പള്ളിയറയിലെ കാര്യങ്ങൾ മുഴുവൻ നോറ്റിരിക്കുന്ന ആളിന്റെ ചുമതലയാണ്. വളരെ മുമ്പ് കാലത്ത് നോറ്റിരുന്ന വലിയ എടച്ചേരി അമ്പുപൊതുവാൾ അറയ്ക്കള്ളിലെ എല്ലാകാര്യങ്ങളും വളരെ ശുഷ്കാന്തിയോടുകൂടി ചെയ്തുവരുന്നതായി കാണുവാൻ സാധിച്ചിട്ടുണ്ട്.", "കാലത്തിന്റെ മാറ്റത്തിനനുസരിച്ച് ചടങ്ങുകളിൽ കൃത്യതപാലിക്കാൻ കഴിയാറായില്ലെങ്കിലും ഏറെക്കുറെ കൃത്യതയോടു കൂടി ഇന്നും ചടങ്ങുകൾ നടത്താൻ കഴിയാറു ണ്ടെന്ന് കൂടി പറയാം."],en:["One member of the family must observe ritual purity (notirikkendath) for the Kaliyattam. On the day the Kaliyattam begins, the person observing purity opens the sanctum door and performs the Kalasham using tender coconut water (ilaneer). Following this, the puja vessels, idols, and sacred weapons (Thiruvayudhangal) are brought out, washed, and cleaned.", "After properly cleaning the divine seats (Devi Peedangal), silk cloth is tied behind the seats. The ornaments to be adorned on the idols are then put on, and the idols and sacred weapons are placed back in their rightful positions. The next task is to prepare sandalwood and red sandalwood on a flag-leaf (kodiyila) to be given to the Peruvanannans when they arrive to recite the Thottam.", "It is the responsibility of the family members to check the accuracy of and receive the offering items brought by the entitled claimants (avakashikal). From the start of the Theyyam until the closing of the doors, all matters inside the Palliyara are the sole responsibility of the person observing purity. In the distant past, the elder Edacheri Ambu Pothuval, who observed purity, was known to carry out all duties inside the inner chamber (araykkallu) with utmost dedication.", "While it may no longer be possible to maintain absolute precision in rituals due to the changes of time, it can still be said that the rituals are conducted today with a fair degree of accuracy."]}},
+ {g:1,n:{ml:'വന്നറിയിച്ച് കൊട്ടൽ',en:'Vannariyichu Kottal'},body:{ml:["സന്ധ്യാദീപം വെച്ചതിനു ശേഷം തെയ്യം കെട്ടുവാനായി നിയോഗിക്കപ്പെട്ട പെരുവണ്ണാന്മാർ അതിന് തയ്യാറായി എത്തിയെന്ന് അറിയിക്കുന്നതിനും, തെയ്യം തുടങ്ങാൻ സമയമായിരിക്കുന്നുവെന്നും, അറിയിക്കുന്ന “വന്നറിയിച്ച് കൊട്ടൽ\" ചടങ്ങ് നടത്തി കഴിഞ്ഞാൽ, പള്ളിയറയുടെ പുറത്തുള്ള തറയിൽ മാറ്റ് വിരിച്ച് നിറനാഴിയും നിലവിളക്കും വെച്ച്, ശ്രീകണ്ഠ‌ൻ ദൈവത്തിന്റെ കടുത്തിലയും, പരിചയും മറ്റ് ആയുധങ്ങളും വെക്കേണ്ടതാണ്.", "പള്ളിയറയിൽ ദേവീദേവന്മാർക്ക് പൂജ നടത്തുന്നതിന് 5 കൊടിയില ഉണക്കലരി, 5 കൊടിയില മലർ, 3 ചുകപ്പിച്ച ഇളനീർ, 2 സാധരണ ഇളനീർ, 5 കൊടിയിലയിലും വെറ്റില അടക്ക എന്നിവ മുതിർച്ചയായി വെച്ച തിനു ശേഷം മണി മുട്ടി പൂജ നടത്തുന്നു. പൂജകഴിഞ്ഞാൽ പിന്നീട് തോറ്റം ചൊല്ലുന്നതിനുള്ള സമയമാണ്. കാനക്കര ഭഗവതിയുടെയും, മടയിൽ ചാമുണ്ഡിയുടെയും തോറ്റം ചൊല്ലുന്നതിനായി അവരുടെ കോലാധാരികൾ തിരുമുറ്റത്ത് എത്തിയാൽ നോറ്റിരിക്കുന്ന ആൾ ദീപം കത്തിച്ച കൊടി ഇല രണ്ടുപേർക്കും നൽകുന്നതോടൊപ്പം ശ്രീകണ്ഠൻ ദൈവത്തിന്റെ തോറ്റമായ വെള്ളാട്ടം കെട്ടുവാൻ വേണ്ടി തയ്യാറായി പട്ടുടുത്ത് വന്ന പെരുവണ്ണാനും ദീപം കത്തിച്ച കൊടിയില കൊടുക്കേണ്ടതാണ്.", "തോറ്റം ചൊല്ലുവാനായി വന്നിരുന്ന പെരുവണ്ണാന്മാർ തലയിൽ തലപ്പാളി കെട്ടി, ചന്ദനവും രക്തചന്ദനവും ധരിച്ചുവന്നാൽ എല്ലാവർക്കും കൈനീട്ടം (വെറ്റില, അടക്ക) തറവാട്ടിൽ കാരണവർ നല്കേണ്ടതാണ്. ഇതു നൽകിക്കഴിഞ്ഞാൽ വെള്ളാട്ടം കെട്ടുവാനായി തയ്യാറായി വന്നയാൾക്ക് ശ്രീകണഠൻ ദൈവത്തിന്റെ കടുത്തില നൽകുക. അയാൾ ദൈവത്തെ വന്ദിച്ച ശേഷം ഈ കടുത്തില തിരിച്ച് നല്കി അണിയറയിലേക്ക് പോയി, വെള്ളാട്ടത്തിന്റെ മുഖത്തെഴുത്ത് നടത്തേണ്ടതാണ്."],en:["After lighting the evening lamp, the \"Vannariyichu Kottal\" ritual is performed to announce that the Peruvanannans appointed to perform the Theyyam have arrived and that it is time to begin. Following this, a mat is spread on the platform outside the Palliyara, and a nirnazhi (measure filled with rice), a standing lamp, Srikanthan Deivam’s kaduthila (sword-like weapon), shield, and other weapons are placed.", "For the puja of the deities inside the Palliyara, 5 flag-leaves of raw rice, 5 flag-leaves of puffed rice, 3 red tender coconuts, 2 normal tender coconuts, and betel leaves with areca nut on 5 flag-leaves are placed as offerings (muthircha), after which the bell is rung to perform the puja. After the puja comes the time for reciting the Thottam.", "When the kolam-bearers arrive in the courtyard to recite the Thottams of Kanakkara Bhagavathi and Madayil Chamundi, the person observing purity presents lit flag-leaves to both of them, alongside giving a lit flag-leaf to the Peruvanannan who has come dressed in silk, ready to perform Vellattam—the Thottam of Srikanthan Deivam. When the Peruvanannans who came to recite the Thottam tie headscarfs (thalappali) and wear sandalwood and red sandalwood paste, the family elder must present kaineetam (betel leaves and areca nut) to everyone.", "Once this is given, Srikanthan Deivam’s kaduthila is handed over to the person ready to perform the Vellattam. After paying respects to the deity, he returns the kaduthila, goes to the greenroom (aniyara), and proceeds with the facial makeup (mukhavezhuthu) for the Vellattam."]}},
+ {g:1,n:{ml:'വെള്ളാട്ടം',en:'Vellattam'},body:{ml:["തോറ്റം കഴിഞ്ഞാൽ പിന്നീട് വെള്ളാട്ടത്തിന്റെ പുറപ്പാടാണ്. പയ്യന്നൂർ പെരുമാളെ വന്ദിച്ച് നർത്തനവും കഴിഞ്ഞ് ഭക്തരെ അനുഗ്രഹിച്ച ശേഷം തന്റെ തൽസ്വരൂപം ധരിച്ച് കാണാമെന്ന് പറഞ്ഞ് അരങ്ങൊഴിയുന്നു. വെള്ളാട്ടം കഴിഞ്ഞാൽ പള്ളിയറയിൽ വെച്ച മുതിർച്ചകൾ മടക്കി ശുദ്ധിയാക്കുകയും, അപ്പം വാർക്കുവാനുള്ള തയ്യാറെടുപ്പുകൾ നടത്തുകയും വേണം.", "അപ്പം വാർത്ത് വെള്ളാട്ടം കഴിഞ്ഞാൽ പിന്നീട് കാനക്കര ഭഗവതിയുടെ തോറ്റം ചൊല്ലുന്നതിനായി വരുമ്പോൾ ശ്രീകണ്‌ഠൻ ദൈവം കെട്ടുന്നയാളും വന്ന് നേരത്തെ വെള്ളാട്ടം കെട്ടുവാനായി വന്ന സമയത്ത് നടത്തിയ ചടങ്ങുകൾ നടക്കേണ്ടതാണ്. ഇപ്രകാരം മടയിൽ ചാമുണ്ഡി, വിഷ്ണുമൂർത്തി എന്നീ തെയ്യങ്ങളുടെതടക്കം മൂന്ന് തോറ്റങ്ങളുടെയും അവസാനം അവർ തന്നെ ഗുരുസിതർപ്പണം കഴിച്ച് ഇളനീർ കൊണ്ട് കലശമാടേണ്ടതാണ്."],en:["After the Thottam, the Vellattam makes its procession (purappadu). Having paid respects to Payyannur Perumal and completed its dance, it blesses the devotees and exits the arena, stating that it will be seen again adorned in its true divine form. Once the Vellattam concludes, the offerings (muthirchakal) placed in the Palliyara are cleared and purified, and preparations are made to bake the ritual appams (appam varkkal).", "After baking the appams and finishing the Vellattam, when the time comes to recite the Thottam of Kanakkara Bhagavathi, the performer of Srikanthan Deivam also arrives to conduct the same rituals that were performed earlier during the Vellattam. Similarly, at the conclusion of all three Thottams—including those of Madayil Chamundi and Vishnumurthy—the performers themselves must perform the Gurusi Tharpanam and purify the space with tender coconut water (kalashamadal)."]}},
+ {g:1,n:{ml:'ദൈവം (ശ്രീകണ്ഠൻ ദൈവം)',en:'Sreekantan Daivam'},body:{ml:["തോറ്റങ്ങൾ കഴിഞ്ഞാൽ പിന്നെ നമ്മുടെ കാരണവരായി കരുതി ആരാധിക്കുന്ന ശ്രീകണ്‌ഠൻ ദൈവത്തിന്റെ പുറപ്പാടിനുള്ള സമയമാണ്. ശ്രീകണ്ഠൻ ദൈവം തുടങ്ങുന്നതിന് മുമ്പായി നേരത്തെ എഴുതിയത് പോലെ 5 കൊടിയില വീതം അരിയും, മലരും, 5 കൊടിയില അപ്പവും നിവേദ്യം വെക്കുന്നതാണ്. ഒരു കൊടിയിലയിൽ അപ്പം വേറെ കെട്ടിവെക്കേണ്ടതാണ്. ഇത് ദൈവത്തിനുള്ള തണ്ണീനമൃതാണ്.", "ശ്രീകണ്ഠൻ ദൈവം മുഖത്തെഴുതിയതിനു ശേഷം ആടയാഭരണങ്ങളണിഞ്ഞ ഓലച്ചൂട്ടിന്റെ വെളിച്ചത്തിൽ മുടിവെക്കാതെ വന്ന് കലശത്തറയ്ക്ക് അഭിമുഖമായി ഇരുന്നാണ് മുടി വെക്കുന്നത്. മുടിവെച്ച ശേഷം തറവാട്ട് കാരണവർ വെള്ളാട്ട് തളികയിൽ ചങ്ങലവട്ടയും അരിയുമായി പിറകോട്ട് നടന്ന് കലശത്തറയ്ക്ക് മൂന്ന് പ്രദക്ഷിണം വെക്കുമ്പോൾ ദൈവം കാരണവർക്ക് മുഖമായും പ്രദക്ഷിണം വെക്കേണ്ടതാണ്.", "പ്രദക്ഷിണം കഴിഞ്ഞാൽ നേരെ കിഴക്കോട്ടു പോയി പെരുമാളെ വന്ദിച്ച ശേഷമാണ് മറ്റ് ചടങ്ങുകൾ നടത്തുക. ആയുധം മാറ്റലും മറ്റ് കലാശങ്ങളും കഴിഞ്ഞാൽ പിന്നെ ശ്രീകണ്ഠൻ ദൈവത്തിന്റെ പടയോട്ട (കല്ല്യാമ്പള്ളി)മാണ്. ഇത് പഠിപ്പുരയുടെ വടക്ക് കിഴക്കെ മൂലയിൽ പ്രത്യേകം തയ്യാറാക്കിയ സ്ഥലത്താണ് നടത്തേണ്ടത്. ഇതിനായി പോകുമ്പോൾ കാരണവർ തളികയും ചങ്ങലവട്ടയുമായും, അറയിൽ നോറ്റിരിക്കുന്നയാൾ കിണ്ടിയിൽ വെള്ളവുമായും അനുഗമിക്കേണ്ടതാണ്.", "അവിടെ വെച്ച പടയോട്ടവും കോഴിയറവും കഴിഞ്ഞശേഷം കൈകാൽ കഴുകി ശുദ്ധിവരുത്തി നടയിൽ വന്ന് പീഠത്തിലിരുന്ന് തണ്ണീനമൃത് സേവിച്ച ശേഷം ഭക്തർക്ക് കനകപ്പൊടി നൽകുന്നു. ദൈവം കഴിഞ്ഞാൽ മുതിർച്ചയായിവച്ച അപ്പങ്ങൾ എടുത്തുമാറ്റേണ്ടതാണ്."],en:["Following the Thottams is the time for the procession of Srikanthan Deivam, whom we worship as our ancestral deity (Karanavar). Before Srikanthan Deivam begins, offerings of 5 flag-leaves each of rice and puffed rice, and 5 flag-leaves of appam are placed as before. An appam must be tied up separately on one flag-leaf. This is the Thanneeramruthu reserved for the deity.", "After completing the facial makeup, Srikanthan Deivam adorns its divine ornaments and arrives by the light of a palm-frond torch (olachoodu) without putting on its principal headgear (mudi), sitting facing the Kalashathara to wear the mudi. After the headgear is adorned, the family elder walks backward carrying a changalavatta (traditional metal lamp) and rice in a Vellattu dish (vellattu thalika), circumambulating the Kalashathara three times, while the deity must circumambulate facing the elder.", "After the circumambulation, the deity proceeds directly to the east to pay respects to Perumal before other rituals are conducted. Following the changing of weapons and other ritual conclusions comes the martial procession (padayottam or Kallyampalli) of Srikanthan Deivam. This must be conducted at a specially prepared spot in the northeast corner of the gateway (padippura).", "When going for this, the elder must accompany with the dish and changalavatta, and the person observing purity in the chamber (ara) must follow with water in a kindi. After completing the padayottam and cock sacrifice (kozhiyaravu) there, washing hands and feet for purification, the deity comes to the shrine, sits on the seat, partakes of the Thanneeramruthu, and then distributes kanakapodi (sacred turmeric-based powder) to the devotees.", "Once the Deivam concludes, the appams kept as offerings must be removed."]}},
+ {g:2,n:{ml:'വിഷ്ണുമൂർത്തി',en:'Vishnumurthy'},body:{ml:["പിറ്റേന്ന് രാവിലെ പള്ളിയറ ശുദ്ധമാക്കിയശേഷം മേൽ എഴുതിയ പ്രകാരം 5 കൊടിയില വീതം ഉണക്ക ലരി, മലര്, ഇളനീർ എന്നിവ മുതിർച്ചയായി വെച്ച ശേഷം മണിമുട്ടി പൂജ കഴിഞ്ഞാൽ വിഷ്ണുമൂർത്തിയുടെ പുറപ്പാടിനുള്ള സമയമായി. വിഷ്ണുമൂർത്തി പുറപ്പെട്ട് പ്രധാന ചടങ്ങുകളും ഹിരണ്യകശിപു വധവും കഴിഞ്ഞാൽ പിന്നെ ഭക്തർക്ക് അനുഗ്രഹം വാങ്ങാനുള്ള സമയമാണ്.", "ശ്രീ മടയിൽ ചാമുണ്ഡിയുടെ പുറപ്പാട് നടത്തുവാനുള്ള സമയമായെന്നു കണ്ടാൽ വിഷ്ണുമൂർത്തി അരങ്ങൊഴിയും."],en:["The next morning, after purifying the Palliyara, offerings of 5 flag-leaves each of raw rice, puffed rice, and tender coconut are placed as mentioned above. Following the bell-ringing puja, it is time for the procession of Vishnumurthy. Once Vishnumurthy has emerged, completed the main rituals and the slaying of Hiranyakashipu (Hiranyakashipu Vadham), it is time for devotees to receive blessings.", "Seeing that the time has arrived for the procession of Sri Madayil Chamundi, Vishnumurthy exits the arena."]}},
+ {g:2,n:{ml:'മടയിൽ ചാമുണ്ഡി',en:'Madayil Chamundi'},body:{ml:["നമ്മുടെ ആരാധനാമൂർത്തികളിൽ പ്രാധാന്യമുള്ള ശ്രീ മടയിൽ ചാമുണ്ഡിയുടെ പുറപ്പാട് രാവിലെ 11 മണിക്കും 12 മണിക്കും ഇടയിലാണ് നടത്തേണ്ടത്. മടയിൽ ചാമുണ്ഡിയുടെ തിരുമുടി വെച്ച ശേഷം പീഠത്തിൽ നടയിൽ വന്നിരുന്ന് പൂജ കഴിഞ്ഞ് കണ്ണ് തുറന്ന ദേവിയുടെ മുഖം കണ്ടാൽ പേടിക്കാത്തവരുണ്ടാകെന്ന് തോന്നുന്നില്ല. അതിനു ശേഷം കിഴക്കോട്ടു ചെന്ന് പയ്യന്നൂർ പെരുമാളെ വന്ദിച്ച ശേഷം പുറം തിരിഞ്ഞു തിരുമുറ്റത്തേക്കു വരുന്ന മണങ്ങിയാട്ടം പ്രസിദ്ധമാണ്.", "ഈ മണങ്ങിയാട്ടവും തിരുമുറ്റത്തുള്ള നർത്തനവുമാണ് വണ്ണാടിൽ മടയിൽ ചാമുണ്ഡിയുടെ പ്രത്യേകതയായി പലരും പറയാറുള്ളത്. അതുപോലെ മുഖത്തെഴുത്തിനും ഇവിടെ പ്രത്യേകതയുണ്ടത്രെ. നർത്തനങ്ങൾ കഴിഞ്ഞാൽ പിന്നെ ദേവിയുടെ വരാഹ രൂപം ധരിച്ചുള്ള കോഴിയറവാണ്. ഈ രൂപം തികച്ചും പേടിയുളവാക്കുന്നതാണ്. കോഴിയെ ചവിട്ടൽ കഴിഞ്ഞ് കലശത്തറ പ്രദക്ഷിണവും കഴിഞ്ഞ്, തന്റെ ആവിർഭാവത്തെക്കുറിച്ചുള്ള വാചാലും കഴിഞ്ഞാൽ പിന്നെ ദേവിയുടെ കനകപ്പൊടി നല്‌കലാണ്."],en:["The procession of Sri Madayil Chamundi, who holds a prominent place among our worshipful deities, should take place between 11:00 AM and 12:00 noon. After placing the divine headgear (thirumudi) of Madayil Chamundi and sitting at the shrine seat following the puja, it is unlikely that anyone who beholds the eyes-opened face of the Goddess would not feel struck with awe.", "Following this, the renowned Manangiyattam takes place, where the deity proceeds east to pay respects to Payyannur Perumal and then turns back toward the courtyard. Many cite this Manangiyattam and the dance in the courtyard as the unique hallmark of Vannadil Madayil Chamundi. Similarly, her facial makeup is also said to be unique.", "After the dances comes the cock sacrifice (kozhiyaravu) performed while assuming the boar form (Varaha roopam) of the Goddess. This form is truly terrifying. After stepping on the fowl, circumambulating the Kalashathara, and delivering the verbal pronouncements (vachalu) regarding her manifestation, the distribution of the Goddess's kanakapodi takes place."]}},
+ {g:2,n:{ml:'കാനക്കര ഭഗവതി',en:'Kanakkara Bhagavathi'},body:{ml:["മടയിൽ ചാമുണ്ഡി ഭക്തർക്ക് പ്രസാദം നൽകാൻ തുടങ്ങിയതിന് ശേഷമാണ് ഉഗ്രമൂർത്തിയായ കാനക്കരഭഗവതി അരങ്ങിലെത്തുക. അരങ്ങിലെത്തി തന്റെ നർത്തനങ്ങൾ കഴിഞ്ഞാൽ പിന്നീട് മടയിൽ ചാമുണ്ഡിയുടെയും കാനക്കര ഭഗവതിയുടെയും ദ്വന്ദയുദ്ധമെന്നപേരിൽ അറിയപ്പെടുന്ന ആയുധകൈമാറ്റവും മറ്റുമാണ്. ഇതിന്റെ പൊരുൾ ഇപ്പോഴും തിരിച്ചറിയാതിരിക്കുകയാണ്.", "ഭഗവതിയുടെ നർത്തനസമയത്ത് ഭക്തർ വഴിപാടും നേർച്ചയുമായി കൊണ്ടുവന്ന എണ്ണ പന്തത്തിൽ ഒഴിക്കുന്ന ചടങ്ങുകൾ നടത്താവുന്നതാണ്. ഈ തെയ്യം പയ്യന്നൂർ-അന്നൂർ ഭാഗങ്ങളിൽ മറ്റെവിടെയും ഇല്ലെന്നതും  പ്രത്യേകം പ്രസ്‌താവിക്കട്ടെ."],en:["It is only after Madayil Chamundi begins distributing prasadam to the devotees that the fierce deity Kanakkara Bhagavathi enters the arena. Upon entering and completing her dances, an exchange of weapons and other acts take place between Madayil Chamundi and Kanakkara Bhagavathi, known as their duel (dwandayudham). The deeper meaning behind this remains unrecognized to this day.", "During the Bhagavathi's dance, rituals involving devotees pouring oil brought as offerings into the oil torch (enna pantham) can be performed. It is also worth noting specially that this Theyyam is found nowhere else in the Payyanur-Annur regions."]}},
+ {g:2,n:{ml:'ഗുളികൻ',en:'Gulikan'},body:{ml:["എല്ലാവരുടെയും രക്ഷകനായി പുറം കാലനെന്നറിയപ്പെടുന്ന ഗുളികൻ പുറപ്പെടുന്നത് അവസാനമായാണ്. നമ്മുടെ ഗുളിക ദേവന് മറ്റ് സ്ഥലങ്ങളിലെ ഗുളികനുമായി ഒരുപാട് പ്രത്യേകതയുണ്ട്. എന്തെന്നാൽ എല്ലാ ഗുളികൻ ദൈവങ്ങളും കുടികൊള്ളുന്നത് സാക്ഷാൽ പള്ളിയറക്ക് പുറത്ത് പ്രത്യേകസ്ഥാനത്താണ്. എന്നാൽ നമ്മുടെ ഗുളികനും, മറ്റ് ദൈവങ്ങളും ഒരേ പള്ളിയറയിൽ വ്യത്യസ്ത പീഠങ്ങളിലാണ് കുടികൊള്ളുന്നത്.", "ഇത് എവിടെയും ദർശിക്കാത്ത ഒരു അവസ്ഥയാണ്. കൂടാതെ നമ്മുടെ ഗുളികന്റെ മുഖപാള പോലുള്ള മുഖപാള എവിടെയും കാണാൻ സാധിച്ചിട്ടില്ല. നവരസങ്ങളും ഒത്തിണങ്ങിയ ഒരു മുഖപാളയാണ് ഇവിടെയുള്ളത്. ഇതുപോലൊന്ന് നിർമ്മിച്ചെടുക്കുന്നതിനായി പ്രഗത്ഭരായ ശില്‌പികൾ ഇവിടെ വന്ന് കളിമണ്ണിലും, മെഴുകിലും അച്ചെടുത്ത് കൊണ്ടു പോയിരുന്നുവെങ്കിലും അവർക്കൊന്നും തന്നെ അതിനു കഴിഞ്ഞിട്ടില്ലെന്ന് നേരിട്ടറിവുണ്ട്.", "ഗുളികൻ സമീപ ഭവനങ്ങളിൽ പോയി തിരിച്ചുവരുമ്പോഴേക്കും എല്ലാ ദൈവങ്ങളും അരങ്ങൊഴിയാനുള്ള തയ്യാറെടുപ്പു നടത്തി. ഭക്തന്മാരുടെ തുലാഭാരവും നടത്തി അരങ്ങൊഴിയുന്നതാണ്."],en:["Gulikan, known as Puram Kalan (the outer death/time) and the protector of all, makes his procession last. Our Gulikan deity has many unique features compared to Gulikan in other places. While all other Gulikan deities reside in a special separate location outside the actual Palliyara, our Gulikan and the other deities reside within the exact same Palliyara on distinct seats.", "This is a phenomenon witnessed nowhere else. Furthermore, a face-mask (mukhapala) like that of our Gulikan cannot be seen anywhere else. It is a face-mask harmonizing all the nine emotions (navarasas). We have direct knowledge that when prominent sculptors came here to copy and cast one out of clay and wax to replicate it, none of them succeeded.", "By the time Gulikan returns from visiting neighboring houses, all other deities have completed preparations to leave the arena. The Thulabharam of devotees is also conducted before the deities exit the arena."]}},
+ {g:3,n:{ml:'കുറി കൊടുക്കൽ',en:'Giving the Kuri'},body:{ml:["എല്ലാ തെയ്യവും. തോറ്റവും പള്ളിയറയ്ക്ക് മുമ്പിലുള്ള ചടങ്ങുകൾ കഴിഞ്ഞാൽ തറവാട്ടിന്റെ പടിഞ്ഞാറ്റയുടെ മുമ്പിലെത്തി തറവാട്ടിലെ മൂത്ത സ്ത്രീയിൽ നിന്നും അരിയെറിഞ്ഞ് അനുഗ്രഹം വാങ്ങണമെന്നത് ഒരു പ്രധാന ചടങ്ങാണ്. അതുപോലെ തെയ്യം മഞ്ഞൾകുറി പള്ളിപീഠത്തിൽ ചാർത്താൻ നൽകിയാൽ, തറവാട്ടിലെയോ മറ്റ് തറവാട്ടുകളിലെയോ മുത്ത പൊതുവാളോ, ഇളയപൊതുവാളോ പടിപ്പുരയിൽ ഉണ്ടെങ്കിൽ അവർക്ക് കുറി കൊടുത്ത ശേഷം തറവാട്ടിലെ പടിഞ്ഞാറ്റയിൽ വന്ന് കുറികൊടുത്തതിന് ശേഷം മാത്രമേ ഭക്തന്മാർക്ക് കുറി കൊടുക്കാൻ പാടുള്ളു."],en:["Once the rituals in front of the Palliyara for all Theyyams and Thottams are completed, it is an important custom to go before the western room (padippara/padinjatta) of the ancestral house to receive blessings by having rice thrown by the eldest woman of the family. Similarly, if the turmeric mark (manjalkuri) is given by the Theyyam to be adorned on the sanctum seat, it must first be given as a mark to the Muta Pothuval or Iliya Pothuval of the family or other eligible families if they are present at the gateway (padippura), and only after giving it inside the western room of the family can the mark be distributed to general devotees."]}},
+ {g:3,n:{ml:'വിളക്ക്തിരി ഉഴിയൽ',en:'Vilakkuthiri Uzhiyal'},body:{ml:["തെയ്യം കഴിഞ്ഞ് പള്ളിയറ ശുദ്ധമാക്കിയ ശേഷം, തെയ്യത്തിനു മുമ്പായി തോറ്റ സമയത്ത് ആവാഹിച്ചെടുത്ത ദൈവശക്തിയെ തിരികെ പള്ളിയറയിലേക്ക് തന്നെ തിരിച്ച് ചേർൽപ്പിക്കുന്ന ചടങ്ങാണ് വിളക്ക്‌തിരി ഉഴിയൽ. ഇതിന് ഭസ്‌മ ഗുരുസി, ഇളനീർ, വെറ്റില അടക്ക എന്നിവയാണ് വേണ്ടുന്നത്. പെരുവണ്ണാനാണ് തിരുമുറ്റത്തു നിന്നും ഈ ചടങ്ങ് നടത്തേണ്ടത്."],en:["After the Theyyam concludes and the Palliyara is purified, Vilakkuthiri Uzhiyal is the ritual by which the divine energy invoked during the Thottam prior to the Theyyam is returned and re-established back into the Palliyara. Bhasma Gurusi, tender coconut water, and betel leaves with areca nut are required for this. This ritual must be performed by the Peruvanannan from the courtyard."]}},
+ {g:4,n:{ml:'അവകാശികൾ',en:'The hereditary families'},body:{ml:["മീനക്കൊട്ടിലിലെ തെയ്യവും കർക്കിടകം 18-ന് നടത്തുന്ന മുദ്രയടിയന്തിരം, തുലാം 10 ന് നടത്തുന്ന പുത്തരിയടിയന്തിരങ്ങളും നടത്തുന്നത് വണ്ണാടിൽ പുതിയ വീട് (മീത്തലെവീട്) വണ്ണാടിൽ പുതിയ വീട്ട് (കാറോൽ വണ്ണാടിൽ), കാരകുളങ്ങര വണ്ണാടിൽ എന്നീ മൂന്ന് താവഴി അവകാശികളാണ്. ഇതിനു പുറമെ പുത്തരിയടിയന്തിരം കഴിഞ്ഞതിനു ശേഷം അന്നുതന്നെ നടത്തുന്ന വഴിപാട് അടിയന്തിരം നടത്തേണ്ടുന്നത് തായി വണ്ണാടിൽ (കീരിവണ്ണാടിൽ) കൊക്കാനിശ്ശേരി വണ്ണാടിൽ, പള്ളിപ്പിരിയാടത്ത് വണ്ണാടിൽ എന്നീ 3 ത വഴികളാണ്.", "ഇവർ ഓരോരുത്തരായി മൂന്ന് വർഷത്തിലൊരിക്കൽ എന്ന ക്രമത്തിൽ ഇത് നടത്തുന്നു. അത്യതുപോലെ വിഷുസംക്രമ അടിയന്തിരവും, വിഷുക്കണിയും ഒരുക്കേണ്ടത് അറയുള്ള വീട് താവഴിയാണ്. പൂരം അടിയന്തിരവും, കുംഭമാസത്തിൽ ഒരു കളിയാട്ടവുമാണ് രാമാനത്ത് വീട്ടുകാർ ചെയ്യേണ്ടുന്ന അടിയന്തിരങ്ങൾ."],en:["The Theyyam at Meenakkottil, along with the Mudra Adiyanthiram held on Karkitakam 18 and the Puthari Adiyanthirangal held on Thulam 10, are conducted by the three branch claimants: Vannadil Puthiya Veedu (Meethale Veedu), Vannadil Puthiya Veedu (Karol Vannadil), and Karakkulangara Vannadil. In addition to this, the vow-fulfillment ritual (vazhipadu adiyanthiram) held on the very same day after the Puthari Adiyanthiram must be conducted by three branches: Thai Vannadil (Keeri Vannadil), Kokkanisseri Vannadil, and Pallippiriyadath Vannadil.", "These branches take turns conducting this once every three years. Similarly, the Vishu Sankrama Adiyanthiram and the Vishu Kani must be arranged by the Arayulla Veedu branch. The Pooram Adiyanthiram and a Kaliyattam in the month of Kumbham are the rituals to be performed by the Ramanath Veetukar."]}}
+];
+let step = 0;
+const pad = n => String(n + 1).padStart(2, '0');
+
+/* ---------------- Rendering ---------------- */
+const byId = id => TY.find(x => x.id === id);
+const btns = () => `<a class="btn fill" href="${MAP}" target="_blank" rel="noopener">${tr(UI.dir)}</a><a class="btn" href="#theyyams">${tr(UI.ty)}</a>`;
+
+function render() {
+  document.documentElement.lang = lang;
+  $('#links').innerHTML = UI.nav.map(n => `<a href="#${n.id}">${n[lang]}</a>`).join('');
+  $('#lang').textContent = lang === 'ml' ? 'EN' : 'മലയാളം'; $('#lang').href = lang === 'ml' ? '/en' : '/'; $('#lang').setAttribute('hreflang', lang === 'ml' ? 'en' : 'ml');
+  $('#kick').textContent = tr(UI.kick); $('#h1').textContent = tr(UI.title);
+  $('#pills').innerHTML = UI.dates.map((d, i) => `<button type="button" class="pill" data-day="${i}">${d[lang]}</button>`).join('');
+  $('#addr').textContent = tr(UI.addr);
+  $('#cta').innerHTML = $('#sticky').innerHTML = btns();
+  ['e1','t1','e2','t2','e3','t3','note','e4','t4','vtxt'].forEach(k => $('#' + k).textContent = tr(UI[k]));
+  $('#foot').innerHTML = tr(UI.foot);
+  $('#srcnote').innerHTML = tr(UI.srcNote);
+  $('#sched').innerHTML = SCHED.map((s, i) => `<div class="day" id="day${i}"><div><h3>${tr(s.d)}</h3><small>${tr(s.date)}</small></div><div>${s.slots.map(([sl, ids]) => `<div class="slot"><em>${tr(sl)}</em>${ids.map(i => `<div><button type="button" class="tlink" data-id="${i}">${esc(tr(byId(i).n))}</button></div>`).join('')}</div>`).join('')}</div></div>`).join('');
+  $('#cards').innerHTML = TY.map(x => `<button class="tc${x.feat ? ' feat' : ''}" data-id="${x.id}"><img src="${PHOTO(x.img)}" alt="${esc(x.n.en)}" loading="lazy"><span class="b"><span class="when">${dayLbl(x.day)[lang]} · ${tr(x.slot)}</span><strong>${esc(tr(x.n))}</strong><span class="more"><span>${tr(UI.read)}</span></span></span></button>`).join('');
+  $('#info').innerHTML = INFO.map(i => `<div><b>${i.href ? `<a href="${i.href}" target="_blank" rel="noopener">${tr(i.h)}</a>` : tr(i.h)}</b>${tr(i.v)}</div>`).join('');
+  $('#cta2').innerHTML = `<a class="btn fill" href="${MAP}" target="_blank" rel="noopener">${tr(UI.map)}</a>`;
+  renderRites(false);
+}
+
+function renderRites(scroll) {
+  $('#rp').innerHTML = RITES.map((r, i) => `<button class="rp" role="tab" id="rt${i}" aria-selected="${i === step}" tabindex="${i === step ? 0 : -1}" data-s="${i}"><i>${pad(i)}</i>${esc(tr(r.n))}</button>`).join('');
+  const r = RITES[step];
+  const body = r.body ? tr(r.body).map(p => `<p>${esc(p)}</p>`).join('') : `<p>${tr(UI.tbd)}</p>`;
+  $('#rc').setAttribute('aria-labelledby', 'rt' + step);
+  $('#rc').innerHTML = `<div class="meta">${pad(step)} / 13 · ${tr(GROUPS[r.g])}</div><h3>${esc(tr(r.n))}</h3>${r.lead ? `<p class="lead">${esc(tr(r.lead))}</p>` : ''}${body}
+    <div class="step"><button class="btn" data-go="-1" ${step === 0 ? 'disabled' : ''}>${tr(UI.prev)}</button><button class="btn" data-go="1" ${step === 12 ? 'disabled' : ''}>${tr(UI.next)}</button></div>`;
+  if (scroll) $('#rt' + step).scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+}
+
+function openStory(id) {
+  const x = byId(id), paras = x.story ? tr(x.story).split(/\n\n/) : [tr(UI.nostory)];
+  $('#dbody').innerHTML = `<img src="${PHOTO(x.img)}" alt="${esc(x.n.en)}"><div class="in"><h3>${esc(tr(x.n))}</h3>${x.link ? `<a class="thottam" href="${THOTTAM_URL}" target="_blank" rel="noopener"><b>${tr(UI.thottam.h)} ↗</b><small>${tr(UI.thottam.s)}</small></a>` : ''}${paras.map(p => p.startsWith('> ') ? `<p class="verse">${esc(p.slice(2))}</p>` : `<p>${esc(p)}</p>`).join('')}${x.src ? `<div class="src">${tr(UI.srcModal)}</div>` : ''}</div>`;
+  $('#dbody').scrollTop = 0;
+  $('#dlg').showModal();
+}
+
+/* ---------------- Live banner (7–8 November 2026, local time) ---------------- */
+function liveBanner() {
+  const now = new Date(), q = new URLSearchParams(location.search).get('preview');
+  const y = now.getFullYear(), m = now.getMonth(), d = q ? +q : now.getDate(), h = now.getHours();
+  try { if (sessionStorage.getItem('lx')) return; } catch {}
+  if (!(q || (y === 2026 && m === 10 && (d === 7 || d === 8)))) return;
+  const M = ['sree','vish','cham'], txt = {
+    7: {ml:'ഇന്ന് രാത്രി: ഉത്തമന്തിൽ ശ്രീകണ്ഠൻ ദൈവം', en:'Today, evening: Uthamanthil Sreekantan Daivam'},
+    8: h < 10 ? {ml:'ഇന്ന് രാവിലെ: വിഷ്ണുമൂർത്തി', en:'Today, morning: Vishnumoorthy'} : h < 13 ? {ml:'ഇന്ന് ഉച്ചയ്ക്ക് മുമ്പ്: മടയിൽ ചാമുണ്ഡി, കാനക്കര ഭഗവതി', en:'Today, forenoon: Madayil Chamundi, Kanakkara Bhagavathi'} : {ml:'ഇന്ന് ഉച്ചയ്ക്ക് ശേഷം: ഗുളികൻ', en:'Today, afternoon: Gulikan'}
+  };
+  const o = txt[d] || txt[7], pre = d === 7 && h < 12 ? {ml:'അടുത്തത് · ',en:'Next · '} : {ml:'ഇപ്പോൾ · ',en:'Now · '};
+  $('#liveTxt').textContent = pre[lang] + o[lang] + ' · ';
+  $('#live').classList.add('on'); $('#live').dataset.t = JSON.stringify({o, pre});
+}
+$('#liveX').onclick = () => { $('#live').classList.remove('on'); try { sessionStorage.setItem('lx', 1); } catch {} };
+
+/* ---------------- Events ---------------- */
+document.addEventListener('click', e => {
+  const c = e.target.closest('[data-id],[data-s],[data-go],[data-day]'); if (!c) return;
+  if (c.dataset.day !== undefined) { const el = $('#day' + c.dataset.day); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); return; }
+  if (c.dataset.id) return openStory(c.dataset.id);
+  step = c.dataset.s !== undefined ? +c.dataset.s : Math.min(12, Math.max(0, step + +c.dataset.go));
+  renderRites(true);
+  if (c.dataset.go) $('#rites .pills-nav').scrollIntoView({ block: 'nearest' });
+});
+$('#rp').addEventListener('keydown', e => {
+  const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (!k) return;
+  step = Math.min(12, Math.max(0, step + k)); renderRites(true); $('#rt' + step).focus();
+});
+const closeDlg = () => { const d = $('#dlg'); if (!d.open) return; d.classList.add('out'); setTimeout(() => { d.close(); d.classList.remove('out'); }, 210); };
+$('#dx').onclick = closeDlg;
+$('#dlg').addEventListener('click', e => { if (e.target === $('#dlg')) closeDlg(); });
+
+if (!PRE && HERO_VIDEO && !RM) {
+  const v = $('#hv'); v.muted = true; v.src = HERO_VIDEO;
+  v.addEventListener('playing', () => { v.hidden = false; }, { once: true });
+  v.addEventListener('error', () => { v.hidden = true; });
+  v.play().catch(() => {});
+}
+
+/* ---------------- Motion: skipped while pre-rendering and for reduced-motion ---------------- */
+function kinetic() {
+  const h = $('#h1'), txt = h.textContent; h.setAttribute('aria-label', txt); h.textContent = '';
+  let n = 0; const step = lang === 'ml' ? .09 : .03;
+  txt.split(' ').forEach((w, i, a) => {
+    const wrap = document.createElement('span'); wrap.className = 'kw'; wrap.setAttribute('aria-hidden', 'true');
+    (lang === 'ml' ? [w] : [...w]).forEach(u => { const s = document.createElement('span'); s.className = 'ku'; s.textContent = u; s.style.setProperty('--d', (n++ * step).toFixed(2) + 's'); wrap.appendChild(s); });
+    h.appendChild(wrap); if (i < a.length - 1) h.appendChild(document.createTextNode(' '));
+  });
+}
+function embers() {
+  const hero = $('.hero'), cv = document.createElement('canvas'), cx = cv.getContext('2d');
+  cv.className = 'mesh-cv'; cv.setAttribute('aria-hidden', 'true'); hero.insertBefore(cv, hero.querySelector('.w'));
+  const LINK = 120, R = 110, m = { x: -999, y: -999 }; let W, H, pts = [], run = false, raf = 0, rt;
+  const init = () => { const dpr = Math.min(devicePixelRatio || 1, 2); W = hero.clientWidth; H = hero.clientHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pts = Array.from({ length: W < 700 ? 30 : 46 }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: 1 + Math.random() * 1.6 })); };
+  const tick = () => { if (!run) return; cx.clearRect(0, 0, W, H);
+    for (const p of pts) { const dx = p.x - m.x, dy = p.y - m.y, d = Math.hypot(dx, dy); if (d < R && d > .1) { const f = (1 - d / R) * .9; p.x += dx / d * f; p.y += dy / d * f; }
+      p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; }
+    cx.lineWidth = .7;
+    for (let i = 0; i < pts.length; i++) { const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) { const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y); if (d < LINK) { cx.strokeStyle = `rgba(255,170,90,${(1 - d / LINK) * .22})`; cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(b.x, b.y); cx.stroke(); } }
+      cx.fillStyle = 'rgba(255,190,120,.55)'; cx.beginPath(); cx.arc(a.x, a.y, a.r, 0, 6.283); cx.fill(); }
+    raf = requestAnimationFrame(tick); };
+  const go = on => { if (on && !run) { run = true; raf = requestAnimationFrame(tick); } else if (!on) { run = false; cancelAnimationFrame(raf); } };
+  hero.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); m.x = e.clientX - r.left; m.y = e.clientY - r.top; }, { passive: true });
+  hero.addEventListener('pointerleave', () => { m.x = m.y = -999; });
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(init, 150); });
+  let vis = true; new IntersectionObserver(([en]) => { vis = en.isIntersecting; go(vis && !document.hidden); }).observe(hero);
+  document.addEventListener('visibilitychange', () => go(vis && !document.hidden));
+  init();
+}
+function micro() {
+  document.addEventListener('pointerdown', e => { const b = e.target.closest('.btn,.pill'); if (!b) return;
+    const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height) * 2, s = document.createElement('span'); s.className = 'ripple';
+    s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`; b.appendChild(s); setTimeout(() => s.remove(), 650); });
+  if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  let raf = 0, ev, tilt = null; const clear = el => ['--rx', '--ry'].forEach(k => el.style.removeProperty(k));
+  addEventListener('pointermove', e => { ev = e; if (raf) return; raf = requestAnimationFrame(() => { raf = 0; const x = ev.clientX, y = ev.clientY;
+    document.querySelectorAll('.btn,.pill').forEach(b => { const r = b.getBoundingClientRect();
+      if (x > r.left - 20 && x < r.right + 20 && y > r.top - 20 && y < r.bottom + 20) { b.style.setProperty('--mx', ((x - r.left - r.width / 2) * .18).toFixed(1) + 'px'); b.style.setProperty('--my', ((y - r.top - r.height / 2) * .28).toFixed(1) + 'px'); }
+      else if (b.style.getPropertyValue('--mx')) { b.style.removeProperty('--mx'); b.style.removeProperty('--my'); } });
+    const c = ev.target.closest && ev.target.closest('.tc'); if (tilt && tilt !== c) clear(tilt);
+    if (c) { const r = c.getBoundingClientRect(); c.style.setProperty('--ry', (((x - r.left) / r.width - .5) * 9).toFixed(2) + 'deg'); c.style.setProperty('--rx', (-((y - r.top) / r.height - .5) * 9).toFixed(2) + 'deg'); }
+    tilt = c; }); }, { passive: true });
+}
+render();
+if (PRE) window.__DATA = { TY, SCHED };
+else { liveBanner(); if (RM) document.documentElement.classList.add('k'); else { kinetic(); document.documentElement.classList.add('k'); embers(); micro(); } }
+})();
+</script>
+
+
+</body></html>
